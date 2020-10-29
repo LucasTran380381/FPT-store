@@ -7,6 +7,7 @@ namespace StoreDB.Util
         public static void GetConn()
         {
             
+            return;
         }
     }
 }

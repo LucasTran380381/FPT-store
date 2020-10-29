@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using System.Data.SqlClient;
 
 namespace FPT_store.Pages
 {
@@ -14,6 +15,7 @@ namespace FPT_store.Pages
 
         public void OnGet()
         {
+            
         }
     }
 }
