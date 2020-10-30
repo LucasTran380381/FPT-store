@@ -24,7 +24,11 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "/Users/macpro/Documents/PRN292/project/FPT-store/FptDB/FptDB.csproj": {
+                "projectPath": "/Users/macpro/Documents/PRN292/project/FPT-store/FptDB/FptDB.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -49,6 +53,62 @@
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.302/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/macpro/Documents/PRN292/project/FPT-store/FptDB/FptDB.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/macpro/Documents/PRN292/project/FPT-store/FptDB/FptDB.csproj",
+        "projectName": "FptDB",
+        "projectPath": "/Users/macpro/Documents/PRN292/project/FPT-store/FptDB/FptDB.csproj",
+        "packagesPath": "/Users/macpro/.nuget/packages/",
+        "outputPath": "/Users/macpro/Documents/PRN292/project/FPT-store/FptDB/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/macpro/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[2.1.0-preview2.20297.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

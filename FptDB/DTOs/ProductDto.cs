@@ -1,6 +1,6 @@
 namespace FptDB.DTOs
 {
-    public class Product
+    public class ProductDto
     {
         public string Id { get; set; }
 

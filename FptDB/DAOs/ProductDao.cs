@@ -1,27 +1,27 @@
 using System.Collections.Generic;
 using FptDB.DTOs;
+using Microsoft.Data.SqlClient;
 
 namespace FptDB.DAOs
 {
-    public class ProductDao: IDao<Product, string>
-
+    public class ProductDao : IDao<ProductDto, string>
     {
-        public List<Product> GetAll()
+        public List<ProductDto> GetAll()
+        {
+            return null;
+        }
+
+        public ProductDto Get(string id)
         {
             throw new System.NotImplementedException();
         }
 
-        public Product Get(string id)
+        public bool Save(ProductDto t)
         {
             throw new System.NotImplementedException();
         }
 
-        public bool Save(Product t)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public bool Update(Product t)
+        public bool Update(ProductDto t)
         {
             throw new System.NotImplementedException();
         }

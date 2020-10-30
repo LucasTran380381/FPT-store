@@ -14,7 +14,11 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
-        "projectReferences": {}
+        "projectReferences": {
+          "/Users/macpro/Documents/PRN292/project/FPT-store/FptDB/FptDB.csproj": {
+            "projectPath": "/Users/macpro/Documents/PRN292/project/FPT-store/FptDB/FptDB.csproj"
+          }
+        }
       }
     },
     "warningProperties": {

@@ -5,4 +5,8 @@
         <RootNamespace>FPT_store</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\FptDB\FptDB.csproj" />
+    </ItemGroup>
+
 </Project>
