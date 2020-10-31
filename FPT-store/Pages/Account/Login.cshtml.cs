@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -14,12 +13,10 @@ namespace FPT_store.Pages
         [BindProperty] public string Username { get; set; }
         [BindProperty] public string Password { get; set; }
 
-        [BindProperty(SupportsGet = true)]
-        public string ReturnUrl { get; set; }
+        [BindProperty(SupportsGet = true)] public string ReturnUrl { get; set; }
 
         public void OnGet()
         {
-            
         }
 
         public async Task<IActionResult> OnPost()
@@ -35,7 +32,8 @@ namespace FPT_store.Pages
                 var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                 var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
                 var properties = new AuthenticationProperties();
-                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, claimsPrincipal, properties);
+                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, claimsPrincipal,
+                    properties);
 
                 return Redirect(ReturnUrl);
             }

@@ -1,5 +1,3 @@
-using System.Runtime.Serialization;
-
 namespace FPT_store.Models
 {
     public class Product

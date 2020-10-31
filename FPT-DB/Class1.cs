@@ -1,10 +1,6 @@
-﻿using System;
-using System.Data.SqlClient;
-
-namespace FptDB
+﻿namespace FptDB
 {
     public class Class1
     {
-        
     }
 }
