@@ -1,3 +1,9 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Http
+@{
+    var path = Context.Request.Path.ToString();
     Layout = "_Layout";
+    if (path != null && (path.Contains("admin") || path.Contains("Admin")))
+    {
+        Layout = "Shared/_LayoutAdmin";
+    }
 }
