@@ -4,77 +4,14 @@
     "/Users/macpro/Documents/PRN292/project/FPT-store/FPT-store/FPT-store.csproj": {}
   },
   "projects": {
-    "/Users/macpro/Documents/PRN292/project/FPT-store/FPT-store/FPT-store.csproj": {
+    "/Users/macpro/Documents/PRN292/project/FPT-store/FPT-DB/FPT-DB.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/macpro/Documents/PRN292/project/FPT-store/FPT-store/FPT-store.csproj",
-        "projectName": "FPT-store",
-        "projectPath": "/Users/macpro/Documents/PRN292/project/FPT-store/FPT-store/FPT-store.csproj",
+        "projectUniqueName": "/Users/macpro/Documents/PRN292/project/FPT-store/FPT-DB/FPT-DB.csproj",
+        "projectName": "FPT-DB",
+        "projectPath": "/Users/macpro/Documents/PRN292/project/FPT-store/FPT-DB/FPT-DB.csproj",
         "packagesPath": "/Users/macpro/.nuget/packages/",
-        "outputPath": "/Users/macpro/Documents/PRN292/project/FPT-store/FPT-store/obj/",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "/Users/macpro/.nuget/NuGet/NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "netcoreapp3.1"
-        ],
-        "sources": {
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "netcoreapp3.1": {
-            "projectReferences": {
-              "/Users/macpro/Documents/PRN292/project/FPT-store/FptDB/FptDB.csproj": {
-                "projectPath": "/Users/macpro/Documents/PRN292/project/FPT-store/FptDB/FptDB.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "netcoreapp3.1": {
-          "dependencies": {
-            "Newtonsoft.Json": {
-              "target": "Package",
-              "version": "[12.0.3, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.302/RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "/Users/macpro/Documents/PRN292/project/FPT-store/FptDB/FptDB.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "/Users/macpro/Documents/PRN292/project/FPT-store/FptDB/FptDB.csproj",
-        "projectName": "FptDB",
-        "projectPath": "/Users/macpro/Documents/PRN292/project/FPT-store/FptDB/FptDB.csproj",
-        "packagesPath": "/Users/macpro/.nuget/packages/",
-        "outputPath": "/Users/macpro/Documents/PRN292/project/FPT-store/FptDB/obj/",
+        "outputPath": "/Users/macpro/Documents/PRN292/project/FPT-store/FPT-DB/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/macpro/.nuget/NuGet/NuGet.Config"
@@ -115,6 +52,69 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.302/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/macpro/Documents/PRN292/project/FPT-store/FPT-store/FPT-store.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/macpro/Documents/PRN292/project/FPT-store/FPT-store/FPT-store.csproj",
+        "projectName": "FPT-store",
+        "projectPath": "/Users/macpro/Documents/PRN292/project/FPT-store/FPT-store/FPT-store.csproj",
+        "packagesPath": "/Users/macpro/.nuget/packages/",
+        "outputPath": "/Users/macpro/Documents/PRN292/project/FPT-store/FPT-store/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/macpro/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "/Users/macpro/Documents/PRN292/project/FPT-store/FPT-DB/FPT-DB.csproj": {
+                "projectPath": "/Users/macpro/Documents/PRN292/project/FPT-store/FPT-DB/FPT-DB.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

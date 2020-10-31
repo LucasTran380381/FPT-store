@@ -379,17 +379,17 @@
           }
         }
       },
-      "FptDB/1.0.0": {
+      "FPT-DB/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "Microsoft.Data.SqlClient": "2.1.0-preview2.20297.7"
         },
         "compile": {
-          "bin/placeholder/FptDB.dll": {}
+          "bin/placeholder/FPT-DB.dll": {}
         },
         "runtime": {
-          "bin/placeholder/FptDB.dll": {}
+          "bin/placeholder/FPT-DB.dll": {}
         }
       }
     }
@@ -1199,15 +1199,15 @@
         "version.txt"
       ]
     },
-    "FptDB/1.0.0": {
+    "FPT-DB/1.0.0": {
       "type": "project",
-      "path": "../FptDB/FptDB.csproj",
-      "msbuildProject": "../FptDB/FptDB.csproj"
+      "path": "../FPT-DB/FPT-DB.csproj",
+      "msbuildProject": "../FPT-DB/FPT-DB.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "FptDB >= 1.0.0",
+      "FPT-DB >= 1.0.0",
       "Newtonsoft.Json >= 12.0.3"
     ]
   },
@@ -1235,8 +1235,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "/Users/macpro/Documents/PRN292/project/FPT-store/FptDB/FptDB.csproj": {
-              "projectPath": "/Users/macpro/Documents/PRN292/project/FPT-store/FptDB/FptDB.csproj"
+            "/Users/macpro/Documents/PRN292/project/FPT-store/FPT-DB/FPT-DB.csproj": {
+              "projectPath": "/Users/macpro/Documents/PRN292/project/FPT-store/FPT-DB/FPT-DB.csproj"
             }
           }
         }

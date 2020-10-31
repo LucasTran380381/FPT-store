@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPT-store", "FPT-store\FPT-store.csproj", "{D106110F-9945-4DF9-B713-A67854E3F514}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FptDB", "FptDB\FptDB.csproj", "{785C92A7-2067-4869-8D62-6B8779F156F5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPT-DB", "FPT-DB\FPT-DB.csproj", "{785C92A7-2067-4869-8D62-6B8779F156F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

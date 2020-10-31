@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "/Users/macpro/Documents/PRN292/project/FPT-store/FptDB/FptDB.csproj",
-    "projectName": "FptDB",
-    "projectPath": "/Users/macpro/Documents/PRN292/project/FPT-store/FptDB/FptDB.csproj",
-    "outputPath": "/Users/macpro/Documents/PRN292/project/FPT-store/FptDB/obj/",
+    "projectUniqueName": "/Users/macpro/Documents/PRN292/project/FPT-store/FPT-DB/FPT-DB.csproj",
+    "projectName": "FPT-DB",
+    "projectPath": "/Users/macpro/Documents/PRN292/project/FPT-store/FPT-DB/FPT-DB.csproj",
+    "outputPath": "/Users/macpro/Documents/PRN292/project/FPT-store/FPT-DB/obj/",
     "projectStyle": "PackageReference",
     "originalTargetFrameworks": [
       "netcoreapp3.1"
