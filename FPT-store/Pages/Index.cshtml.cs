@@ -2,6 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 using FPT_store.Models;
+using FptDB.DAOs;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
@@ -26,6 +27,8 @@ namespace FPT_store.Pages
 
             var hash256 = Hash256("123");
             Console.Out.WriteLine($"{hash256}");
+            
+            new AuthDao().Authenticate("vuthugiang26100", "hihihaha");
         }
 
         public static string Hash256(string password)

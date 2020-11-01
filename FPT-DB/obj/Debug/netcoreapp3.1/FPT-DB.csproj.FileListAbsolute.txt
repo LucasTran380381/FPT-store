@@ -1,0 +1,9 @@
+/Users/macpro/Documents/PRN292/project/FPT-store/FPT-DB/bin/Debug/netcoreapp3.1/FPT-DB.deps.json
+/Users/macpro/Documents/PRN292/project/FPT-store/FPT-DB/bin/Debug/netcoreapp3.1/FPT-DB.dll
+/Users/macpro/Documents/PRN292/project/FPT-store/FPT-DB/bin/Debug/netcoreapp3.1/FPT-DB.pdb
+/Users/macpro/Documents/PRN292/project/FPT-store/FPT-DB/obj/Debug/netcoreapp3.1/FPT-DB.csprojAssemblyReference.cache
+/Users/macpro/Documents/PRN292/project/FPT-store/FPT-DB/obj/Debug/netcoreapp3.1/FPT-DB.AssemblyInfoInputs.cache
+/Users/macpro/Documents/PRN292/project/FPT-store/FPT-DB/obj/Debug/netcoreapp3.1/FPT-DB.AssemblyInfo.cs
+/Users/macpro/Documents/PRN292/project/FPT-store/FPT-DB/obj/Debug/netcoreapp3.1/FPT-DB.csproj.CoreCompileInputs.cache
+/Users/macpro/Documents/PRN292/project/FPT-store/FPT-DB/obj/Debug/netcoreapp3.1/FPT-DB.dll
+/Users/macpro/Documents/PRN292/project/FPT-store/FPT-DB/obj/Debug/netcoreapp3.1/FPT-DB.pdb

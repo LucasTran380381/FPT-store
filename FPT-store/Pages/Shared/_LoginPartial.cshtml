@@ -1,0 +1,22 @@
+@using System.Security.Claims
+@if (Context.User.Identity.IsAuthenticated)
+{
+    var fullName = Context.User.FindFirstValue("fullName");
+    <li class="nav-item dropdown ml-auto">
+        <a class="nav-link dropdown-toggle text-primary" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Welcome, @fullName
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" asp-page="/Account/Logout">Logout</a>
+        </div>
+    </li>
+}
+else
+{
+    <li class="nav-item ml-auto">
+        <a class="nav-link text-primary mr-auto" asp-page="/Account/Login">Login</a>
+    </li>
+}

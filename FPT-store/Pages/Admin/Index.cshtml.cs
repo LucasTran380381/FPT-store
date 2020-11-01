@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FPT_store.Pages.Admin
 {
-    [Authorize(Roles = "admin")]
+    [Authorize]
     public class Index : PageModel
     {
         public void OnGet()
