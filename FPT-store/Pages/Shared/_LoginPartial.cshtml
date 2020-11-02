@@ -1,7 +1,7 @@
 @using System.Security.Claims
 @if (Context.User.Identity.IsAuthenticated)
 {
-    var fullName = Context.User.FindFirstValue("fullName");
+    var fullName = Context.User.FindFirstValue(ClaimTypes.Name);
     <li class="nav-item dropdown ml-auto">
         <a class="nav-link dropdown-toggle text-primary" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Welcome, @fullName

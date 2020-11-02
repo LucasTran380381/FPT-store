@@ -13,7 +13,7 @@ namespace FptDB.DAOs
             {
                 using (var connection = DbUtil.GetConn())
                 {
-                    string sql = @"select email,
+                    var sql = @"select email,
        pwd,
        fullname,
        phone,
@@ -26,6 +26,7 @@ from accounts,
      roles,
      status
 where fk_status = status.id
+  and fk_status = 1
   and fk_roles = roles.id
   and email = @email
   and pwd = @pwd";
@@ -46,7 +47,8 @@ where fk_status = status.id
                                 var statusId = reader.GetInt32(6);
                                 var statusName = reader.GetString(7);
                                 var address = reader.GetString(8);
-                                account = new AccountDto(email, pwd, fullName, address, new RoleDto(roleId, roleName), new StatusDto(statusId, statusName));
+                                account = new AccountDto(email, pwd, fullName, address, phone,
+                                    new RoleDto(roleId, roleName), new StatusDto(statusId, statusName));
                             }
                         }
                     }
@@ -54,9 +56,9 @@ where fk_status = status.id
             }
             catch (SqlException e)
             {
-                Console.WriteLine(e);
-                throw;
+                throw new Exception(e.Message);
             }
+
             return account;
         }
     }

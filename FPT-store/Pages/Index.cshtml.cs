@@ -1,39 +1,24 @@
 ﻿using System;
 using System.Security.Cryptography;
 using System.Text;
-using FPT_store.Models;
 using FptDB.DAOs;
+using FptDB.DTOs;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
 
 namespace FPT_store.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
-
-        public IndexModel(ILogger<IndexModel> logger)
-        {
-            _logger = logger;
-        }
-
         public void OnGet()
         {
-            var product = new Product();
-
-            var authenticated = HttpContext.User.Identity.IsAuthenticated;
-
-            Console.Out.WriteLine($"is loggin {authenticated}");
-
-            var hash256 = Hash256("123");
-            Console.Out.WriteLine($"{hash256}");
-            
-            new AuthDao().Authenticate("vuthugiang26100", "hihihaha");
+            IDao<ProductDto, string> productDao = new ProductDao();
+            var products = productDao.GetAll();
+            foreach (var productDto in products) Console.Out.WriteLine($"{productDto.Name}");
         }
 
         public static string Hash256(string password)
         {
-            string hashPassword = null;
+            string hashPassword;
             using (var sha256 = SHA256.Create())
             {
                 var input = Encoding.UTF8.GetBytes(password);

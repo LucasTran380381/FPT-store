@@ -8,7 +8,6 @@ namespace FPT_store.Pages.Admin
     {
         public void OnGet()
         {
-            
         }
     }
 }

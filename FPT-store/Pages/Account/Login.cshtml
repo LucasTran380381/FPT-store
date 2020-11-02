@@ -12,26 +12,26 @@
 }
 
 <div class="wrapper fadeInDown">
-  <div id="formContent">
-    <!-- Tabs Titles -->
+    <div id="formContent">
+        <!-- Tabs Titles -->
 
-    <!-- Icon -->
-    <div class="fadeIn first">
-      <img src="https://brasol.vn/public/uploads/1521190909-brasol.vn-fpt-logo.jpg" id="icon" alt="User Icon" />
+        <!-- Icon -->
+        <div class="fadeIn first">
+            <img src="https://brasol.vn/public/uploads/1521190909-brasol.vn-fpt-logo.jpg" id="icon" alt="User Icon"/>
+        </div>
+
+        <!-- Login Form -->
+        <form method="post">
+            <input type="email" id="login" class="fadeIn second text-dark" asp-for="LoginModel.Email" placeholder="login">
+            <div class="text-danger">@Model.Message</div>
+            <input type="password" id="password" class="fadeIn third text-dark" asp-for="LoginModel.Password" placeholder="password">
+            <input type="submit" class="fadeIn fourth" value="Log In">
+        </form>
+
+        <!-- Remind Passowrd -->
+        <div id="formFooter">
+            <a class="underlineHover" href="#">Forgot Password?</a>
+        </div>
+
     </div>
-
-    <!-- Login Form -->
-    <form method="post">
-      <input type="text" id="login" class="fadeIn second" asp-for="LoginModel.Email" placeholder="login">
-      <div class="text-danger">@Model.Message</div>
-      <input type="password" id="password" class="fadeIn third" asp-for="LoginModel.Password" placeholder="password">
-      <input type="submit" class="fadeIn fourth" value="Log In">
-    </form>
-
-    <!-- Remind Passowrd -->
-    <div id="formFooter">
-      <a class="underlineHover" href="#">Forgot Password?</a>
-    </div>
-
-  </div>
 </div>

@@ -1,8 +1,8 @@
 namespace FptDB.DTOs
 {
-    public class StatusDto
+    public class CategoryDto
     {
-        public StatusDto(int id, string name)
+        public CategoryDto(int id, string name)
         {
             Id = id;
             Name = name;
