@@ -22,17 +22,15 @@ namespace FPT_store.Pages.Account
 
         public IActionResult OnPost()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
+            if (!ModelState.IsValid) return Page();
 
             IDao<AccountDto, string> dao = new AccountDao();
 
-            var account = new AccountDto(RegisterModel.Email, Hash256(RegisterModel.Password), RegisterModel.Name, RegisterModel.Address,
+            var account = new AccountDto(RegisterModel.Email, Hash256(RegisterModel.Password), RegisterModel.Name,
+                RegisterModel.Address,
                 RegisterModel.Phone, new RoleDto(1, "customer"), new StatusDto(1, "actived"));
 
-            bool result = false;
+            var result = false;
             try
             {
                 result = dao.Save(account);
@@ -40,19 +38,12 @@ namespace FPT_store.Pages.Account
             catch (Exception e)
             {
                 if (e.Message.Contains("PRIMARY KEY"))
-                {
                     Message = $"{RegisterModel.Email} not available for use";
-                } else if (e.Message.Contains("'accounts_phone_uindex"))
-                {
-                    Message = $"{RegisterModel.Phone} has been use";
-                }
+                else if (e.Message.Contains("'accounts_phone_uindex")) Message = $"{RegisterModel.Phone} has been use";
             }
 
-            if (!result)
-            {
-                return Page();
-            }
-             
+            if (!result) return Page();
+
             return RedirectToPage("Login");
         }
 

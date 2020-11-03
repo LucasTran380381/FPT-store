@@ -6,7 +6,7 @@ using Microsoft.Data.SqlClient;
 
 namespace FptDB.DAOs
 {
-    public class ProductDao : IDao<ProductDto, string>
+    public class ProductDao
     {
         public List<ProductDto> GetAll()
         {
@@ -44,20 +44,50 @@ namespace FptDB.DAOs
             return products;
         }
 
-        public List<ProductDto> GetTop(int offset)
+        public List<ProductDto> GetByBrand(string brandName)
         {
-            List<ProductDto> products = null;
+            var products = new List<ProductDto>();
 
             using (var connection = DbUtil.GetConn())
             {
-                string sql = "";
-                using (var command = new SqlCommand("",connection))
+                using (var command = new SqlCommand("GetProductsByBrand", connection))
                 {
-                    
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@BrandName", brandName);
+                    connection.Open();
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read()) products.Add(initProduct(reader));
+                    }
                 }
             }
 
             return products;
+        }
+
+        private ProductDto initProduct(SqlDataReader reader)
+        {
+            var id = reader.GetString("id");
+            var name = reader.GetString("name");
+            var image = reader.GetString("image");
+            var price = reader.GetDouble("price");
+            var quantity = reader.GetInt32("quantity");
+            var brandId = reader.GetInt32("brandId");
+            var brandName = reader.GetString("brandName");
+            var categoryId = reader.GetInt32("categoryId");
+            var categoryName = reader.GetString("categoryName");
+            var statusId = reader.GetInt32("statusId");
+            var statusName = reader.GetString("statusName");
+
+            return new ProductDto(id, name, quantity, image, price,
+                new StatusDto(statusId, statusName),
+                new CategoryDto(categoryId, categoryName),
+                new BrandDto(brandId, brandName));
+        }
+
+        public List<ProductDto> GetTop(int offset)
+        {
+            throw new NotImplementedException();
         }
 
         public ProductDto Get(string id)
