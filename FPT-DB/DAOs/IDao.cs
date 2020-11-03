@@ -6,6 +6,8 @@ namespace FptDB.DAOs
     {
         public List<T> GetAll();
 
+        public List<T> GetTop(int offset);
+
         public T Get(TId id);
 
         public bool Save(T t);

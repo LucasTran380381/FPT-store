@@ -44,6 +44,22 @@ namespace FptDB.DAOs
             return products;
         }
 
+        public List<ProductDto> GetTop(int offset)
+        {
+            List<ProductDto> products = null;
+
+            using (var connection = DbUtil.GetConn())
+            {
+                string sql = "";
+                using (var command = new SqlCommand("",connection))
+                {
+                    
+                }
+            }
+
+            return products;
+        }
+
         public ProductDto Get(string id)
         {
             throw new NotImplementedException();

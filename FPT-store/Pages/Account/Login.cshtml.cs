@@ -1,5 +1,8 @@
+using System;
 using System.Collections.Generic;
 using System.Security.Claims;
+using System.Security.Cryptography;
+using System.Text;
 using System.Threading.Tasks;
 using FPT_store.Models;
 using FptDB.DAOs;
@@ -23,7 +26,7 @@ namespace FPT_store.Pages.Account
         public async Task<IActionResult> OnPost(string returnUrl)
         {
             var authDao = new AuthDao();
-            var accountDto = authDao.Authenticate(LoginModel.Email, LoginModel.Password);
+            var accountDto = authDao.Authenticate(LoginModel.Email, Hash256(LoginModel.Password));
             if (accountDto == null)
             {
                 Message = "Invalid email or password";
@@ -46,6 +49,18 @@ namespace FPT_store.Pages.Account
                 properties);
 
             return Redirect(returnUrl ?? "/Index");
+        }
+
+        public static string Hash256(string password)
+        {
+            string hashPassword;
+            using (var sha256 = SHA256.Create())
+            {
+                var input = Encoding.UTF8.GetBytes(password ??= "");
+                hashPassword = BitConverter.ToString(sha256.ComputeHash(input));
+            }
+
+            return hashPassword;
         }
     }
 }

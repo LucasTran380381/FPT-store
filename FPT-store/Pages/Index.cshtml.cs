@@ -1,19 +1,31 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using FptDB.DAOs;
 using FptDB.DTOs;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FPT_store.Pages
 {
     public class IndexModel : PageModel
     {
+
+        [BindProperty(SupportsGet = true)]
+        public int PageNum { get; set; }
+        public List<ProductDto> Products { get; set; }
         public void OnGet()
         {
             IDao<ProductDto, string> productDao = new ProductDao();
-            var products = productDao.GetAll();
-            foreach (var productDto in products) Console.Out.WriteLine($"{productDto.Name}");
+            Products = productDao.GetAll();
+            
+
+            Console.Out.WriteLine($"{PageNum}");
+
+            var hashPassword = Hash256("123");
+            Console.Out.WriteLine($"{hashPassword}");
         }
 
         public static string Hash256(string password)

@@ -1,0 +1,49 @@
+@page
+@model FPT_store.Pages.Account.Register
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = "Shared/_Layout";
+}
+
+@section Styles
+{
+    <link rel="stylesheet" href="~/css/login.css">
+}
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+
+        <!-- Icon -->
+        <div class="fadeIn first">
+            <img src="https://brasol.vn/public/uploads/1521190909-brasol.vn-fpt-logo.jpg" id="icon" alt="User Icon"/>
+        </div>
+
+        <!-- Register Form -->
+        <form method="post">
+            <div class="text-danger">@Model.Message</div>
+
+            <input type="email" id="login" class="fadeIn second text-dark" asp-for="RegisterModel.Email" placeholder="Email">
+            <span asp-validation-for="RegisterModel.Email" class="text-danger"></span>
+
+            <input type="text" id="name" class="fadeIn second text-dark" asp-for="RegisterModel.Name" placeholder="Name">
+            <span class="text-danger" asp-validation-for="RegisterModel.Name"></span>
+
+            <input type="text" class="fadeIn second text-dark custom-form-control" asp-for="RegisterModel.Address" placeholder="Address">
+            <span class="text-danger" asp-validation-for="RegisterModel.Address"></span>
+
+            <input type="tel" class="fadeIn second text-dark" asp-for="RegisterModel.Phone" placeholder="Phone" pattern="[0-9]{10}">
+            <span class="text-danger" asp-validation-for="RegisterModel.Phone"></span>
+
+            <input type="password" id="password" class="fadeIn third text-dark custom-form-control" asp-for="RegisterModel.Password" placeholder="Password">
+            <span asp-validation-for="RegisterModel.Password" class="text-danger"></span>
+
+            <input type="password" id="confPassword" class="fadeIn third text-dark" asp-for="RegisterModel.ConfirmsPassword" placeholder="Confirm Password">
+            <span asp-validation-for="RegisterModel.ConfirmsPassword" class="text-danger"></span>
+
+            <input type="submit" class="fadeIn fourth" value="Register">
+        </form>
+
+    </div>
+</div>

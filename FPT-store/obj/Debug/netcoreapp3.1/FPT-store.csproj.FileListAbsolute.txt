@@ -62,3 +62,4 @@
 /Users/macpro/Documents/PRN292/project/FPT-store/FPT-store/bin/Debug/netcoreapp3.1/FPT-DB.dll
 /Users/macpro/Documents/PRN292/project/FPT-store/FPT-store/bin/Debug/netcoreapp3.1/FPT-DB.pdb
 /Users/macpro/Documents/PRN292/project/FPT-store/FPT-store/obj/Debug/netcoreapp3.1/Razor/Pages/Shared/_LoginPartial.cshtml.g.cs
+/Users/macpro/Documents/PRN292/project/FPT-store/FPT-store/obj/Debug/netcoreapp3.1/Razor/Pages/Account/Register.cshtml.g.cs
