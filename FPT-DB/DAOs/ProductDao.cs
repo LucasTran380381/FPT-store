@@ -44,7 +44,7 @@ namespace FptDB.DAOs
 
             return products;
         }
-        public List<ProductDto> GetByCate(string cateName)
+        public List<ProductDto> GetByCategory(string cateName)
         {
             var products = new List<ProductDto>();
 
