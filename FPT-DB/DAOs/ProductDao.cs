@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using FptDB.DTOs;
 using Microsoft.Data.SqlClient;
 
@@ -25,25 +26,38 @@ namespace FptDB.DAOs
                 var image = reader.GetString(2);
                 var price = reader.GetDouble("price");
                 var quantity = reader.GetInt32(4);
-                var brandId = reader.GetInt32(5);
-                var brandName = reader.GetString(6);
-                var categoryId = reader.GetInt32(7);
-                var categoryName = reader.GetString(8);
-                var statusId = reader.GetInt32(9);
-                var statusName = reader.GetString(10);
-
+                var brandId = reader.GetInt32(6);
+                var brandName = reader.GetString(7);
+                var categoryId = reader.GetInt32(8);
+                var categoryName = reader.GetString(9);
+                var statusId = reader.GetInt32(10);
+                var statusName = reader.GetString(11);
+                var description = reader.GetString("description");
 
                 products ??= new List<ProductDto>();
 
                 products.Add(new ProductDto(id, name, quantity, image, price,
                     new StatusDto(statusId, statusName),
                     new CategoryDto(categoryId, categoryName),
-                    new BrandDto(brandId, brandName)));
+                    new BrandDto(brandId, brandName), description));
             }
 
             return products;
         }
+        public List<ProductDto> GetByCate(string cateName)
+        {
+            var products = new List<ProductDto>();
 
+            using (var connection = DbUtil.GetConn())
+            {
+                using (var command = new SqlCommand())
+                {
+
+                }
+            }
+
+            return products;
+        }
         public List<ProductDto> GetByBrand(string brandName)
         {
             var products = new List<ProductDto>();
@@ -78,11 +92,12 @@ namespace FptDB.DAOs
             var categoryName = reader.GetString("categoryName");
             var statusId = reader.GetInt32("statusId");
             var statusName = reader.GetString("statusName");
+            var description = reader.GetString("description");
 
             return new ProductDto(id, name, quantity, image, price,
                 new StatusDto(statusId, statusName),
                 new CategoryDto(categoryId, categoryName),
-                new BrandDto(brandId, brandName));
+                new BrandDto(brandId, brandName), description);
         }
 
         public List<ProductDto> GetTop(int offset)
