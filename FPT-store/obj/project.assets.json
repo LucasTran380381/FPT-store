@@ -1212,31 +1212,33 @@
     ]
   },
   "packageFolders": {
-    "/Users/macpro/.nuget/packages/": {}
+    "C:\\Users\\MY HP\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/macpro/Documents/PRN292/project/FPT-store/FPT-store/FPT-store.csproj",
+      "projectUniqueName": "D:\\FPT\\CN5\\PRN292\\FPT-store\\FPT-store\\FPT-store.csproj",
       "projectName": "FPT-store",
-      "projectPath": "/Users/macpro/Documents/PRN292/project/FPT-store/FPT-store/FPT-store.csproj",
-      "packagesPath": "/Users/macpro/.nuget/packages/",
-      "outputPath": "/Users/macpro/Documents/PRN292/project/FPT-store/FPT-store/obj/",
+      "projectPath": "D:\\FPT\\CN5\\PRN292\\FPT-store\\FPT-store\\FPT-store.csproj",
+      "packagesPath": "C:\\Users\\MY HP\\.nuget\\packages\\",
+      "outputPath": "D:\\FPT\\CN5\\PRN292\\FPT-store\\FPT-store\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/macpro/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\MY HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "/Users/macpro/Documents/PRN292/project/FPT-store/FPT-DB/FPT-DB.csproj": {
-              "projectPath": "/Users/macpro/Documents/PRN292/project/FPT-store/FPT-DB/FPT-DB.csproj"
+            "D:\\FPT\\CN5\\PRN292\\FPT-store\\FPT-DB\\FPT-DB.csproj": {
+              "projectPath": "D:\\FPT\\CN5\\PRN292\\FPT-store\\FPT-DB\\FPT-DB.csproj"
             }
           }
         }
@@ -1273,7 +1275,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.302/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

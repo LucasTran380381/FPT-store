@@ -13,6 +13,8 @@ namespace FPT_store.Pages
 
         public List<BrandDto> Brands { get; set; }
 
+        public List<CategoryDto> Categories { get; set; }
+
         public string Message { get; set; }
 
         public void OnGet()

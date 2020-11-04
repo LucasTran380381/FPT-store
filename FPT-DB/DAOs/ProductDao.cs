@@ -1,8 +1,8 @@
+using FptDB.DTOs;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using FptDB.DTOs;
-using Microsoft.Data.SqlClient;
 
 namespace FptDB.DAOs
 {
@@ -57,7 +57,10 @@ namespace FptDB.DAOs
                     connection.Open();
                     using (var reader = command.ExecuteReader())
                     {
-                        while (reader.Read()) products.Add(initProduct(reader));
+                        while (reader.Read())
+                        {
+                            products.Add(initProduct(reader));
+                        }
                     }
                 }
             }
