@@ -44,6 +44,13 @@ namespace FptDB.DAOs
             return products;
         }
 
+        public List<ProductDto> GetByName(string name)
+        {
+            var products = new List<ProductDto>();
+
+            return null;
+        }
+
         public List<ProductDto> GetByBrand(string brandName)
         {
             var products = new List<ProductDto>();
