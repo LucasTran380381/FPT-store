@@ -92,7 +92,26 @@ namespace FptDB.DAOs
 
         public ProductDto Get(string id)
         {
-            return null;
+            ProductDto product = null;
+            using (var connection = DbUtil.GetConn())
+            {
+                using (var command = new SqlCommand("GetProductById", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@Id", id);
+        
+                    connection.Open();
+                    using (var reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            product = initProduct(reader);
+                        }
+                    }
+                }
+            }
+
+            return product;
         }
 
         public bool Save(ProductDto t)
