@@ -92,7 +92,7 @@ namespace FptDB.DAOs
 
         public ProductDto Get(string id)
         {
-            throw new NotImplementedException();
+            return null;
         }
 
         public bool Save(ProductDto t)
