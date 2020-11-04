@@ -5,7 +5,7 @@ using Microsoft.Data.SqlClient;
 
 namespace FptDB.DAOs
 {
-    public class AccountDao : IDao<AccountDto, string>
+    public class AccountDao
     {
         public List<AccountDto> GetAll()
         {
@@ -47,6 +47,11 @@ namespace FptDB.DAOs
         }
 
         public bool Delete(string id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<AccountDto> GetByName(string name)
         {
             throw new NotImplementedException();
         }

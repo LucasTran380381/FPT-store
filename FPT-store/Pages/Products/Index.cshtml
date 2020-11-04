@@ -1,5 +1,4 @@
 @page  "{id}"
-@using System.Security.Cryptography
 @model FPT_store.Pages.Products.Index
 
 @{
@@ -30,16 +29,15 @@
                     <div class="card-body">
                         <h3 class="card-title">@Model.Product.Name</h3>
                         <h4>$ @Model.Product.Price</h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente dicta fugit fugiat hic aliquam itaque facere, soluta. Totam id dolores, sint aperiam sequi pariatur praesentium animi perspiciatis molestias iure, ducimus!</p>
+                        <p class="card-text">@Model.Product.Description</p>
                     </div>
                 </div>
             }
             else
             {
                 <h3 class="text-danger">Not Found Product</h3>
+                <a asp-page="../Index">Home Page</a>
             }
-            
-            
 
 
             <!-- /.card -->

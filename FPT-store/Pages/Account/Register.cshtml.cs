@@ -24,7 +24,7 @@ namespace FPT_store.Pages.Account
         {
             if (!ModelState.IsValid) return Page();
 
-            IDao<AccountDto, string> dao = new AccountDao();
+            var dao = new AccountDao();
 
             var account = new AccountDto(RegisterModel.Email, Hash256(RegisterModel.Password), RegisterModel.Name,
                 RegisterModel.Address,
