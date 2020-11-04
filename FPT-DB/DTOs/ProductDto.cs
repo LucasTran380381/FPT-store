@@ -3,7 +3,7 @@ namespace FptDB.DTOs
     public class ProductDto
     {
         public ProductDto(string id, string name, int quantity, string image, double price, StatusDto status,
-            CategoryDto category, BrandDto brand)
+            CategoryDto category, BrandDto brand, string description)
         {
             Id = id;
             Name = name;
@@ -13,8 +13,9 @@ namespace FptDB.DTOs
             Status = status;
             Category = category;
             Brand = brand;
+            Description = description;
         }
-
+        
         public string Id { get; set; }
 
         public string Name { get; set; }
@@ -30,5 +31,6 @@ namespace FptDB.DTOs
         public CategoryDto Category { get; set; }
 
         public BrandDto Brand { get; set; }
+        public string Description { get; set; }
     }
 }
