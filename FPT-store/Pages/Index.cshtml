@@ -18,14 +18,15 @@
         <div class="col-lg-3">
             <form>
                 <h2>Search Product</h2>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" asp-page-handler="FilterProduct" name="ProductName" asp-for="ProductName">
 
                 <div class="dropdown-divider"></div>
 
                 <div class="list-group">
-                    <a href="#" class="list-group-item">Category 1</a>
-                    <a href="#" class="list-group-item">Category 2</a>
-                    <a href="#" class="list-group-item">Category 3</a>
+                    @foreach (var category in Model.Categories)
+                    {
+                        <a class="list-group-item" asp-page-handler="FilterProduct" asp-route-Data="@category.Name" asp-route-Type="0">@category.Name</a>
+                    }
                 </div>
 
                 <div class="dropdown-divider"></div>
@@ -33,15 +34,12 @@
                 <div class="list-group">
                     @foreach (var brand in Model.Brands)
                     {
-                        <a class="list-group-item" asp-page-handler="FilterProduct" asp-route-Brand="@brand.Name">@brand.Name</a>
+                        <a class="list-group-item" asp-page-handler="FilterProduct" asp-route-Data="@brand.Name" asp-route-Type="1">@brand.Name</a>
                     }
                 </div>
 
                 <div class="dropdown-divider"></div>
 
-                <div class="list-group">
-                    <a class="list-group-item">Brand</a>
-                </div>
             </form>
         </div>
         <!-- /.col-lg-3 -->
