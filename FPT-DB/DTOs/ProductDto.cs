@@ -15,7 +15,11 @@ namespace FptDB.DTOs
             Brand = brand;
             Description = description;
         }
-        
+
+        public ProductDto()
+        {
+        }
+
         public string Id { get; set; }
 
         public string Name { get; set; }

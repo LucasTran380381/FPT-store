@@ -2,7 +2,7 @@ namespace FptDB.DTOs
 {
     public class StatusDto
     {
-        public StatusDto(int id, string name)
+        public StatusDto(int id, string name = "activated")
         {
             Id = id;
             Name = name;

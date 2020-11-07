@@ -1,3 +1,4 @@
+using FptDB.DAOs;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -25,6 +26,8 @@ namespace FPT_store
                     options.LoginPath = "/Account/Login";
                     options.Cookie.Name = "SecurityCookie";
                 });
+
+            services.AddTransient<ProductDao, ProductDao>();
             services.AddRazorPages();
         }
 

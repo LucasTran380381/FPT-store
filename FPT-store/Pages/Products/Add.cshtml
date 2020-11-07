@@ -1,0 +1,121 @@
+@page
+@model FPT_store.Pages.Products.Add
+
+@{
+    ViewData["Title"] = "Add Product";
+    Layout = "Shared/_LayoutAdmin";
+}
+
+
+<form class="form-horizontal" method="post">
+
+    <!-- Form Name -->
+    <legend>PRODUCTS</legend>
+
+    <!-- Text input-->
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="product_name">Product Name</label>
+        <div class="col-md-4">
+            <input id="product_name" asp-for="@Model.AddAndEditProductModel.ProductName" placeholder="PRODUCT NAME" class="form-control input-md" required="" type="text">
+            <span asp-validation-for="AddAndEditProductModel.ProductName" class="text-danger"></span>
+        </div>
+    </div>
+
+    <!-- Select Category -->
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="product_categorie">Product Category</label>
+        <div class="col-md-4">
+            <select id="product_categorie" asp-for="AddAndEditProductModel.CategoryId" class="form-control">
+                @foreach (var category in Model.AddAndEditProductModel.Categories)
+                {
+                    <option value="@category.Id">@category.Name</option>
+                }
+            </select>
+            <span asp-validation-for="AddAndEditProductModel.CategoryId"></span>
+        </div>
+    </div>
+
+    <!-- Select Brands -->
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="product_categorie">Product Brand</label>
+        <div class="col-md-4">
+            <select id="product_categorie" asp-for="AddAndEditProductModel.BrandId" class="form-control">
+                @foreach (var brand in Model.AddAndEditProductModel.Brands)
+                {
+                    <option value="@brand.Id">@brand.Name</option>
+                }
+            </select>
+            <span asp-validation-for="AddAndEditProductModel.BrandId"></span>
+
+        </div>
+    </div>
+
+    <!-- Select Status -->
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="product_categorie">Product Status</label>
+        <div class="col-md-4">
+            <select id="product_categorie" asp-for="AddAndEditProductModel.StatusId" class="form-control">
+                <option value="1">Available</option>
+                <option value="2">Unavailable</option>
+                <option value="3">Sold Out</option>
+            </select>
+            <span asp-validation-for="AddAndEditProductModel.StatusId"></span>
+
+        </div>
+    </div>
+
+
+    <!-- Quantity-->
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="available_quantity">Prouduct Quantity</label>
+        <div class="col-md-4">
+            <input id="available_quantity" asp-for="AddAndEditProductModel.Quantity" placeholder="AVAILABLE QUANTITY" class="form-control-range" min="1" max="100000000" value="1" type="number"/>
+            <span asp-validation-for="AddAndEditProductModel.Quantity" class="text-danger"></span>
+        </div>
+    </div>
+
+    <!-- Price-->
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="available_quantity">Prouduct Price</label>
+        <div class="col-md-4">
+            <input id="price" asp-for="AddAndEditProductModel.Price" placeholder="PRODUCT PRICE" class="form-control-range" min="10000" max="100000000" step="0.1" value="10000" type="number"/>
+            <span asp-validation-for="AddAndEditProductModel.Price" class="text-danger"></span>
+        </div>
+    </div>
+
+    <!-- Image-->
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="available_quantity">Product Image</label>
+        <div class="col-md-4">
+            <input id="image" asp-for="AddAndEditProductModel.Image" placeholder="Image" class="form-control-range" type="text">
+            <span asp-validation-for="AddAndEditProductModel.Image" class="text-danger"></span>
+        </div>
+    </div>
+
+
+    <!-- Desc -->
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="product_description">Product Description</label>
+        <div class="col-md-4">
+            <textarea class="form-control" id="product_description" asp-for="AddAndEditProductModel.Description"></textarea>
+            <span asp-validation-for="AddAndEditProductModel.Description"></span>
+        </div>
+    </div>
+
+
+    <!-- Submit -->
+    <div class="form-group">
+        <div class="col-md-4">
+            <button id="singlebutton" name="singlebutton" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+
+</form>
+
+@section Scripts
+{
+    @if (!string.IsNullOrEmpty(Model.Message))
+    {
+        <script>alert(@Model.Message);</script>
+    }
+}

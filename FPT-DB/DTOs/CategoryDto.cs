@@ -2,7 +2,7 @@ namespace FptDB.DTOs
 {
     public class CategoryDto
     {
-        public CategoryDto(int id, string name)
+        public CategoryDto(int id, string name = "DefaltCategory")
         {
             Id = id;
             Name = name;

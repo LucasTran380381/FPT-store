@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using Dapper;
 using FptDB.DTOs;
 using Microsoft.Data.SqlClient;
 
@@ -131,9 +132,20 @@ namespace FptDB.DAOs
             return product;
         }
 
-        public bool Save(ProductDto t)
+        public bool Save(ProductDto dto)
         {
-            throw new NotImplementedException();
+            bool result;
+            using IDbConnection connection = DbUtil.GetConn();
+            var sql =
+                "insert products (name, image, price, quantity, fk_status, fk_categories, fk_brand, description) values (@Name, @Image, @Price, @Quantity, @StatusId, @CategoryId, @BrandId,@Description)";
+            var param = new
+            {
+                dto.Name, dto.Image, dto.Price, dto.Quantity, StatusId = dto.Status.Id,
+                CategoryId = dto.Category.Id, BrandId = dto.Brand.Id, dto.Description
+            };
+            result = connection.Execute(sql, param) > 0;
+
+            return result;
         }
 
         public bool Update(ProductDto t)
@@ -143,7 +155,15 @@ namespace FptDB.DAOs
 
         public bool Delete(string id)
         {
-            throw new NotImplementedException();
+            using IDbConnection connection = DbUtil.GetConn();
+            const string sql = "update products set fk_status =2 where id = @Id";
+            var param = new
+            {
+                Id = id
+            };
+            var result = connection.Execute(sql, param) > 0;
+
+            return result;
         }
     }
 }

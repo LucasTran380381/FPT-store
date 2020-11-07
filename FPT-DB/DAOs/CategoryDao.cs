@@ -5,11 +5,12 @@ using Microsoft.Data.SqlClient;
 
 namespace FptDB.DAOs
 {
-    internal class CategoryDao
+    public class CategoryDao
     {
         public List<CategoryDto> GetAll()
         {
             var categories = new List<CategoryDto>();
+            IDbConnection cnn = DbUtil.GetConn();
             using (var connection = DbUtil.GetConn())
             {
                 var query = "select id, name from categories";
