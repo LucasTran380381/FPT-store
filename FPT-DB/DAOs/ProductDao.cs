@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using Dapper;
 using FptDB.DTOs;
 using Microsoft.Data.SqlClient;
@@ -132,6 +133,39 @@ namespace FptDB.DAOs
             return product;
         }
 
+        public ProductDto GetForAdmin(string id)
+        {
+            ProductDto dto = null;
+            using (var connection = DbUtil.GetConn())
+            {
+                var sql = @"select products.*, brands.*, status.*, categories.*
+                from products,
+                    brands,
+                    status,
+                    categories
+                where products.fk_brand = brands.id
+                and products.fk_categories = categories.id
+                and products.fk_status = status.id
+                and products.id = @Id";
+                var param = new
+                {
+                    Id = id
+                };
+                var list = connection.Query<ProductDto, BrandDto, StatusDto, CategoryDto, ProductDto>(sql,
+                    (productDto, brandDto, status, category) =>
+                    {
+                        productDto.Brand = brandDto;
+                        productDto.Status = status;
+                        productDto.Category = category;
+                        return productDto;
+                    }, param).ToList();
+
+                if (list.Count > 0) dto = list.First();
+            }
+
+            return dto;
+        }
+
         public bool Save(ProductDto dto)
         {
             bool result;
@@ -148,9 +182,32 @@ namespace FptDB.DAOs
             return result;
         }
 
-        public bool Update(ProductDto t)
+        public bool Update(ProductDto dto)
         {
-            throw new NotImplementedException();
+            bool isSuccess;
+            using (var connection = DbUtil.GetConn())
+            {
+                const string sql = @"update products
+                set name = @Name,
+                    image = @Image,
+                    price = @Price,
+                    quantity = @Quantity,
+                    description = @Description,
+                    fk_status = @StatusId,
+                    fk_categories = @CategoryId,
+                    fk_brand = @BrandId
+                where id = @Id";
+                var param = new
+                {
+                    dto.Id, dto.Name, dto.Image, dto.Price, dto.Quantity, dto.Description,
+                    StatusId = dto.Status.Id,
+                    CategoryId = dto.Category.Id,
+                    BrandId = dto.Brand.Id
+                };
+                isSuccess = connection.Execute(sql, param) > 0;
+            }
+
+            return isSuccess;
         }
 
         public bool Delete(string id)

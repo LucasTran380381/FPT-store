@@ -12,7 +12,10 @@ namespace FPT_store.Models
         [Required] public string Image { get; set; }
         [Range(10000, 1000000000)] public double Price { get; set; }
         [Range(1, 1000000000)] public int Quantity { get; set; }
-        [StringLength(100, MinimumLength = 5)] public string Description { get; set; }
+
+        [StringLength(4000, MinimumLength = 5)]
+        public string Description { get; set; }
+
         public int StatusId { get; set; }
         public int CategoryId { get; set; }
         public int BrandId { get; set; }
