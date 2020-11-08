@@ -125,7 +125,7 @@ else
 {
     @if (!string.IsNullOrEmpty(Model.Message))
     {
-        <script>alert("Update not success")</script>
+        <script>alert("@Model.Message")</script>
     }
 
 }

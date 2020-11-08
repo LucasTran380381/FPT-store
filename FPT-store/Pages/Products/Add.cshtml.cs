@@ -1,3 +1,4 @@
+using System;
 using FPT_store.Models;
 using FptDB.DAOs;
 using Microsoft.AspNetCore.Mvc;
@@ -21,20 +22,25 @@ namespace FPT_store.Pages.Products
         public void OnGet()
         {
             AddAndEditProductModel = new AddAndEditProductModel();
+
+            Console.Out.WriteLine($"{AddAndEditProductModel}");
         }
 
         public IActionResult OnPost()
         {
             IActionResult view = Page();
-            Message = "Update not success";
 
             if (ModelState.IsValid)
-            {
-                var dto = AddAndEditProductModel.ToDto();
-                var isSaved = _productDao.Save(dto);
-
-                if (isSaved) view = RedirectToPage("/admin/index");
-            }
+                try
+                {
+                    var dto = AddAndEditProductModel.ToDto();
+                    var isSaved = _productDao.Save(dto);
+                    if (isSaved) view = RedirectToPage("/admin/index");
+                }
+                catch (Exception e)
+                {
+                    Message = e.Message;
+                }
 
             return view;
         }
