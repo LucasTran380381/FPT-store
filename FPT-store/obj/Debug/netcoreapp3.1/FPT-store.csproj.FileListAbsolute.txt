@@ -134,3 +134,4 @@ D:/FPT/CN5/PRN292/FPT-store/FPT-store/obj/Debug/netcoreapp3.1/FPT-store.genrunti
 /Users/macpro/Documents/PRN292/project/FPT-store/FPT-store/obj/Debug/netcoreapp3.1/Razor/Pages/Products/Delete.cshtml.g.cs
 /Users/macpro/Documents/PRN292/project/FPT-store/FPT-store/obj/Debug/netcoreapp3.1/Razor/Pages/Products/Edit.cshtml.g.cs
 /Users/macpro/Documents/PRN292/project/FPT-store/FPT-store/bin/Debug/netcoreapp3.1/Dapper.dll
+/Users/macpro/Documents/PRN292/project/FPT-store/FPT-store/obj/Debug/netcoreapp3.1/Razor/Pages/Orders/Index.cshtml.g.cs

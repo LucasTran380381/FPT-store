@@ -9,11 +9,18 @@ namespace FPT_store.Pages.Admin
     [Authorize(Roles = "admin")]
     public class Index : PageModel
     {
-        public List<ProductDto> Products { get; set; }
+        private readonly ProductDao _productDao;
+
+        public Index(ProductDao productDao)
+        {
+            _productDao = productDao;
+        }
+
+        public List<ProductDto> Products { get; private set; }
 
         public void OnGet()
         {
-            Products = new ProductDao().GetAllForAd();
+            Products = _productDao.GetAllForAd();
         }
     }
 }
