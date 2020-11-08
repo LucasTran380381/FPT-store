@@ -24,8 +24,6 @@ namespace FPT_store.Pages.Products
         public void OnGet()
         {
             AddAndEditProductModel = new AddAndEditProductModel();
-
-            Console.Out.WriteLine($"{AddAndEditProductModel}");
         }
 
         public IActionResult OnPost()
