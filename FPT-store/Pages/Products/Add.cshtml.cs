@@ -1,11 +1,13 @@
 using System;
 using FPT_store.Models;
 using FptDB.DAOs;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FPT_store.Pages.Products
 {
+    [Authorize(Roles = "admin")]
     public class Add : PageModel
     {
         private readonly ProductDao _productDao;

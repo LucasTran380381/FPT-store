@@ -1,10 +1,12 @@
 using FptDB.DAOs;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Data.SqlClient;
 
 namespace FPT_store.Pages.Products
 {
+    [Authorize(Roles = "admin")]
     public class Delete : PageModel
     {
         private readonly ProductDao _productDao;
