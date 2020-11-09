@@ -48,6 +48,7 @@ namespace FPT_store.Pages.Account
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, claimsPrincipal,
                 properties);
 
+            if (accountDto.Role.Name.Equals("admin")) returnUrl = "/Admin/Index";
             return Redirect(returnUrl ?? "/Index");
         }
 
