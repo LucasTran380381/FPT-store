@@ -83,7 +83,7 @@
 
                             <div class="card-body">
                                 <h4 class="card-title">
-                                    <a href="#">@product.Name</a>
+                                    <a asp-page="Products/Index" asp-route-id="@product.Id">@product.Name</a>
                                 </h4>
                                 <h5>@product.Price</h5>
                             </div>
@@ -92,6 +92,11 @@
                             </div>
                         </div>
                     </div>
+                }
+
+                @if (Model.Products.Count == 0)
+                {
+                    <h4 class="text-danger">Not found product suitable</h4>
                 }
 
             </div>

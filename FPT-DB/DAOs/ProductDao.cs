@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using Dapper;
 using FptDB.DTOs;
 using Microsoft.Data.SqlClient;
 
@@ -21,39 +22,24 @@ namespace FptDB.DAOs
             using var reader = command.ExecuteReader();
             while (reader.Read())
             {
-                var id = reader.GetString("id");
-                var name = reader.GetString("name");
-                var image = reader.GetString(2);
-                var price = reader.GetDouble("price");
-                var quantity = reader.GetInt32(4);
-                var brandId = reader.GetInt32(6);
-                var brandName = reader.GetString(7);
-                var categoryId = reader.GetInt32(8);
-                var categoryName = reader.GetString(9);
-                var statusId = reader.GetInt32(10);
-                var statusName = reader.GetString(11);
-                var description = reader.GetString("description");
-
                 products ??= new List<ProductDto>();
 
-                products.Add(new ProductDto(id, name, quantity, image, price,
-                    new StatusDto(statusId, statusName),
-                    new CategoryDto(categoryId, categoryName),
-                    new BrandDto(brandId, brandName), description));
+                products.Add(initProduct(reader));
             }
 
             return products;
         }
-        public List<ProductDto> GetByCategory(string cateName)
+
+        public List<ProductDto> GetAllForAd()
         {
             var products = new List<ProductDto>();
 
             using (var connection = DbUtil.GetConn())
             {
-                using (var command = new SqlCommand("GetProductsByCategory", connection))
+                using (var command = new SqlCommand("GetAllProductsForAd", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@CategoryName", cateName);
+
                     connection.Open();
                     using (var reader = command.ExecuteReader())
                     {
@@ -64,6 +50,31 @@ namespace FptDB.DAOs
 
             return products;
         }
+
+        public List<ProductDto> GetByCategory(string cateName)
+        {
+            var products = new List<ProductDto>();
+
+            using (var connection = DbUtil.GetConn())
+            {
+                using (var command = new SqlCommand("GetProductsByCategory", connection))
+                {
+<<<<<<< HEAD
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@CategoryName", cateName);
+                    connection.Open();
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read()) products.Add(initProduct(reader));
+                    }
+=======
+>>>>>>> master
+                }
+            }
+
+            return products;
+        }
+
         public List<ProductDto> GetByBrand(string brandName)
         {
             var products = new List<ProductDto>();
@@ -134,22 +145,113 @@ namespace FptDB.DAOs
 
         public ProductDto Get(string id)
         {
-            throw new NotImplementedException();
+            ProductDto product = null;
+            using (var connection = DbUtil.GetConn())
+            {
+                using (var command = new SqlCommand("GetProductById", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@Id", id);
+
+                    connection.Open();
+                    using (var reader = command.ExecuteReader())
+                    {
+                        if (reader.Read()) product = initProduct(reader);
+                    }
+                }
+            }
+
+            return product;
         }
 
-        public bool Save(ProductDto t)
+        public ProductDto GetForAdmin(string id)
         {
-            throw new NotImplementedException();
+            ProductDto dto = null;
+            using (var connection = DbUtil.GetConn())
+            {
+                var sql = @"select products.*, brands.*, status.*, categories.*
+                from products,
+                    brands,
+                    status,
+                    categories
+                where products.fk_brand = brands.id
+                and products.fk_categories = categories.id
+                and products.fk_status = status.id
+                and products.id = @Id";
+                var param = new
+                {
+                    Id = id
+                };
+                var list = connection.Query<ProductDto, BrandDto, StatusDto, CategoryDto, ProductDto>(sql,
+                    (productDto, brandDto, status, category) =>
+                    {
+                        productDto.Brand = brandDto;
+                        productDto.Status = status;
+                        productDto.Category = category;
+                        return productDto;
+                    }, param).ToList();
+
+                if (list.Count > 0) dto = list.First();
+            }
+
+            return dto;
         }
 
-        public bool Update(ProductDto t)
+        public bool Save(ProductDto dto)
         {
-            throw new NotImplementedException();
+            bool result;
+            using IDbConnection connection = DbUtil.GetConn();
+            var sql =
+                "insert products (name, image, price, quantity, fk_status, fk_categories, fk_brand, description) values (@Name, @Image, @Price, @Quantity, @StatusId, @CategoryId, @BrandId,@Description)";
+            var param = new
+            {
+                dto.Name, dto.Image, dto.Price, dto.Quantity, StatusId = dto.Status.Id,
+                CategoryId = dto.Category.Id, BrandId = dto.Brand.Id, dto.Description
+            };
+            result = connection.Execute(sql, param) > 0;
+
+            return result;
+        }
+
+        public bool Update(ProductDto dto)
+        {
+            bool isSuccess;
+            using (var connection = DbUtil.GetConn())
+            {
+                const string sql = @"update products
+                set name = @Name,
+                    image = @Image,
+                    price = @Price,
+                    quantity = @Quantity,
+                    description = @Description,
+                    fk_status = @StatusId,
+                    fk_categories = @CategoryId,
+                    fk_brand = @BrandId
+                where id = @Id";
+                var param = new
+                {
+                    dto.Id, dto.Name, dto.Image, dto.Price, dto.Quantity, dto.Description,
+                    StatusId = dto.Status.Id,
+                    CategoryId = dto.Category.Id,
+                    BrandId = dto.Brand.Id
+                };
+                isSuccess = connection.Execute(sql, param) > 0;
+            }
+
+            return isSuccess;
         }
 
         public bool Delete(string id)
         {
-            throw new NotImplementedException();
+            using IDbConnection connection = DbUtil.GetConn();
+            const string sql = "update products set fk_status =2 where id = @Id";
+            var param = new
+            {
+                Id = id
+            };
+            var result = connection.Execute(sql, param) > 0;
+
+            return result;
         }
     }
 }

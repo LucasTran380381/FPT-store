@@ -2,7 +2,7 @@ namespace FptDB.DTOs
 {
     public class BrandDto
     {
-        public BrandDto(int id, string name)
+        public BrandDto(int id, string name = "DefaultBrand")
         {
             Id = id;
             Name = name;

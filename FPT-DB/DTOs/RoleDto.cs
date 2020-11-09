@@ -2,7 +2,7 @@ namespace FptDB.DTOs
 {
     public class RoleDto
     {
-        public RoleDto(int id, string name)
+        public RoleDto(int id, string name = "customer")
         {
             Id = id;
             Name = name;

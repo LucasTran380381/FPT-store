@@ -1,4 +1,38 @@
 @page
 @model FPT_store.Pages.Admin.Index
+<a asp-page="/Products/Add">Add Product</a>
+@if (Model.Products.Count != 0)
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Brand</th>
+            <th scope="col">Category</th>
+            <th scope="col">Status</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
 
-hello admin
+        @foreach (var product in Model.Products)
+        {
+            <tr>
+                <td>@product.Id</td>
+                <td>@product.Name</td>
+                <td>@product.Quantity</td>
+                <td>@product.Brand.Name</td>
+                <td>@product.Category.Name</td>
+                <td>@product.Status.Name</td>
+                <td><a asp-page="/products/delete" asp-route-id="@product.Id">Delete</a>|<a asp-page="/products/edit" asp-route-id="@product.Id">Edit</a></td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+else
+{
+    <h3 class="text-danger">Not found products in store</h3>
+}

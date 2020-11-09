@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "yhqunapv+owPM1AcxKMbRYKeEd+c5vE9JtFfPzXxgsNWlJ3XNzVO5j5STnYFY5XveAblGzMElwfbVG43rRVXQA==",
+  "dgSpecHash": "H+PLVNlVpctdp/qEBlLexur3NruWocI31QJQwjnYnVAGClxzwy2P5MnUlJw/RFM+LVZUPtMPcH66GnZpGzc6Mw==",
   "success": true,
   "projectFilePath": "D:\\FPT\\CN5\\PRN292\\FPT-store\\FPT-DB\\FPT-DB.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\MY HP\\.nuget\\packages\\dapper\\2.0.35\\dapper.2.0.35.nupkg.sha512",
     "C:\\Users\\MY HP\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",
     "C:\\Users\\MY HP\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.0-preview2.20297.7\\microsoft.data.sqlclient.2.1.0-preview2.20297.7.nupkg.sha512",
     "C:\\Users\\MY HP\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
@@ -42,7 +43,7 @@
     "C:\\Users\\MY HP\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",
     "C:\\Users\\MY HP\\.nuget\\packages\\system.reflection.emit\\4.3.0\\system.reflection.emit.4.3.0.nupkg.sha512",
     "C:\\Users\\MY HP\\.nuget\\packages\\system.reflection.emit.ilgeneration\\4.3.0\\system.reflection.emit.ilgeneration.4.3.0.nupkg.sha512",
-    "C:\\Users\\MY HP\\.nuget\\packages\\system.reflection.emit.lightweight\\4.3.0\\system.reflection.emit.lightweight.4.3.0.nupkg.sha512",
+    "C:\\Users\\MY HP\\.nuget\\packages\\system.reflection.emit.lightweight\\4.7.0\\system.reflection.emit.lightweight.4.7.0.nupkg.sha512",
     "C:\\Users\\MY HP\\.nuget\\packages\\system.reflection.extensions\\4.3.0\\system.reflection.extensions.4.3.0.nupkg.sha512",
     "C:\\Users\\MY HP\\.nuget\\packages\\system.reflection.primitives\\4.3.0\\system.reflection.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\MY HP\\.nuget\\packages\\system.reflection.typeextensions\\4.3.0\\system.reflection.typeextensions.4.3.0.nupkg.sha512",
@@ -72,5 +73,12 @@
     "C:\\Users\\MY HP\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\MY HP\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file D:\\FPT\\CN5\\PRN292\\FPT-store\\FPT-DB\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
