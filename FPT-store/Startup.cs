@@ -28,6 +28,9 @@ namespace FPT_store
                 });
 
             services.AddTransient<ProductDao, ProductDao>();
+            services.AddTransient<OrderDao, OrderDao>();
+            services.AddTransient<StatusDao, StatusDao>();
+            services.AddTransient<OrderDetailDao, OrderDetailDao>();
             services.AddRazorPages();
         }
 
