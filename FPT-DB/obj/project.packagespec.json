@@ -1,15 +1,16 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "/Users/macpro/Documents/PRN292/project/FPT-store/FPT-DB/FPT-DB.csproj",
+    "projectUniqueName": "D:\\FPT\\CN5\\PRN292\\FPT-store\\FPT-DB\\FPT-DB.csproj",
     "projectName": "FPT-DB",
-    "projectPath": "/Users/macpro/Documents/PRN292/project/FPT-store/FPT-DB/FPT-DB.csproj",
-    "outputPath": "/Users/macpro/Documents/PRN292/project/FPT-store/FPT-DB/obj/",
+    "projectPath": "D:\\FPT\\CN5\\PRN292\\FPT-store\\FPT-DB\\FPT-DB.csproj",
+    "outputPath": "D:\\FPT\\CN5\\PRN292\\FPT-store\\FPT-DB\\obj\\",
     "projectStyle": "PackageReference",
     "originalTargetFrameworks": [
       "netcoreapp3.1"
     ],
     "sources": {
+      "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
       "https://api.nuget.org/v3/index.json": {}
     },
     "frameworks": {
@@ -50,7 +51,7 @@
           "privateAssets": "all"
         }
       },
-      "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.302/RuntimeIdentifierGraph.json"
+      "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
     }
   }
 }

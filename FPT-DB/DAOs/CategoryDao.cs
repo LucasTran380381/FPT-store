@@ -1,7 +1,14 @@
+<<<<<<< HEAD
+﻿using FptDB.DTOs;
+using Microsoft.Data.SqlClient;
+using System.Collections.Generic;
+using System.Data;
+=======
 ﻿using System.Collections.Generic;
 using System.Data;
 using FptDB.DTOs;
 using Microsoft.Data.SqlClient;
+>>>>>>> master
 
 namespace FptDB.DAOs
 {
@@ -10,11 +17,18 @@ namespace FptDB.DAOs
         public List<CategoryDto> GetAll()
         {
             var categories = new List<CategoryDto>();
+<<<<<<< HEAD
+            using (var connection = DbUtil.GetConn())
+            {
+                var sql = "select id, name from categories";
+                using (var command = new SqlCommand(sql, connection))
+=======
             IDbConnection cnn = DbUtil.GetConn();
             using (var connection = DbUtil.GetConn())
             {
                 var query = "select id, name from categories";
                 using (var command = new SqlCommand(query, connection))
+>>>>>>> master
                 {
                     connection.Open();
                     using (var reader = command.ExecuteReader())
@@ -29,7 +43,10 @@ namespace FptDB.DAOs
                     }
                 }
             }
+<<<<<<< HEAD
+=======
 
+>>>>>>> master
             return categories;
         }
     }
