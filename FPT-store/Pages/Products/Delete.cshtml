@@ -5,12 +5,14 @@
     ViewData["Title"] = "Delete Product";
     Layout = "Shared/_LayoutAdmin";
 }
-<h3 class="text-danger">Sure, to delete product</h3>
-<a asp-page="/admin/index">Return to admin page</a>
+<div class="text-center">
+    <h3 class="text-danger">Sure, to delete product?</h3>
+    <a asp-page="/admin/index">Return to admin page</a>
 
-<form method="post">
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+    <form method="post" class="mt-3">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
 
 @section Scripts
 {
