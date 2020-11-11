@@ -48,15 +48,16 @@ namespace FPT_store.Pages.Account
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, claimsPrincipal,
                 properties);
 
+            if (accountDto.Role.Name.Equals("admin")) returnUrl = "/Admin/Index";
             return Redirect(returnUrl ?? "/Index");
         }
 
-        public static string Hash256(string password)
+        private static string Hash256(string password)
         {
             string hashPassword;
             using (var sha256 = SHA256.Create())
             {
-                var input = Encoding.UTF8.GetBytes(password ??= "");
+                var input = Encoding.UTF8.GetBytes(password ?? "");
                 hashPassword = BitConverter.ToString(sha256.ComputeHash(input));
             }
 

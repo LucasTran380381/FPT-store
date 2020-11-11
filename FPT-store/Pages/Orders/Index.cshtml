@@ -4,3 +4,65 @@
 @{
     Layout = "Shared/_Layout";
 }
+
+<form>
+    <input type="hidden" name="handler" value="Search">
+    <input type="text" name="id" value="">
+    <button class="btn btn-primary" asp-page-handler="search">Search</button>
+</form>
+
+@if (Model.Model != null)
+{
+    <div class="row">
+        <div class="col-12">
+            <ul class="list-group">
+                <li class="list-group-item">Order Id: @Model.Model.Id</li>
+                <li class="list-group-item">Customer Email: @Model.Model.Email</li>
+                <li class="list-group-item">Create Date: @Model.Model.Date</li>
+            </ul>
+
+        </div>
+        @if (Model.Model.OrderDetails != null)
+        {
+            <div class="row">
+                <h3 class="text-primary my-5">Order Detail: </h3>
+                <div class="col-12">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Prouduct name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Amount</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var orderDetail in Model.Model.OrderDetails)
+                        {
+                            <tr>
+                                <td>@orderDetail.ProductName</td>
+                                <td>@orderDetail.Price</td>
+                                <td>@orderDetail.Quantity</td>
+                                <td>@orderDetail.Amount</td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        }
+
+    </div>
+}
+else
+{
+    <h3 class="text-danger">Not Found Order</h3>
+}
+
+@section Scripts
+{
+    @if (!string.IsNullOrEmpty(Model.Message))
+    {
+        <script>alert("@Model.Message")</script>
+    }
+}
