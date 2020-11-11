@@ -25,19 +25,32 @@ namespace FPT_store.Pages.Orders
             _orderDetailDao = orderDetailDao;
         }
 
+        public string Message { get; set; }
+
         public OrderSearchModel Model { get; set; }
 
         public void OnGetSearch(string id)
         {
-            Console.Out.WriteLine($"id {id}");
             var email = User.FindFirstValue(ClaimTypes.Email);
-            var dto = _orderDao.Get(id, email);
-            if (dto != null)
+            var role = User.FindFirstValue(ClaimTypes.Role);
+
+            try
             {
-                var dtoEmail = dto.Email;
-                Console.Out.WriteLine($"{dtoEmail}");
-                var orderDetailDtos = _orderDetailDao.GetByOrderId(dto.Id);
-                if (orderDetailDtos != null) Model = InitModel(dto, orderDetailDtos);
+                OrderDto dto = null;
+                if (role.Equals("customer"))
+                    dto = _orderDao.Get(id, email);
+                else
+                    dto = _orderDao.Get(id);
+
+                if (dto != null)
+                {
+                    var orderDetailDtos = _orderDetailDao.GetByOrderId(dto.Id);
+                    if (orderDetailDtos != null) Model = InitModel(dto, orderDetailDtos);
+                }
+            }
+            catch (Exception e)
+            {
+                Message = e.Message;
             }
         }
 
