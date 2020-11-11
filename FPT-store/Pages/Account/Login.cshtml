@@ -22,9 +22,9 @@
 
         <!-- Login Form -->
         <form method="post">
-            <input type="email" id="login" class="fadeIn second text-dark" asp-for="LoginModel.Email" value="" placeholder="Email" required>
+            <input type="email" id="login" class="fadeIn second text-dark" asp-for="LoginModel.Email" placeholder="Email" required>
             <div class="text-danger">@Model.Message</div>
-            <input type="password" id="password" class="fadeIn third text-dark" asp-for="LoginModel.Password" value="" placeholder="Password">
+            <input type="password" id="password" class="fadeIn third text-dark" asp-for="LoginModel.Password" placeholder="Password">
             <input type="submit" class="fadeIn fourth" value="Log In">
         </form>
 

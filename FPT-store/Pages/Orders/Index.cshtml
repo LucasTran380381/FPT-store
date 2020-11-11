@@ -6,9 +6,10 @@
 }
 
 <form>
-    <input type="hidden" name="handler" value="Search">
     <input type="text" name="id" value="">
     <button class="btn btn-primary" asp-page-handler="search">Search</button>
+    <input type="hidden" name="handler" value="Search">
+
 </form>
 
 @if (Model.Model != null)

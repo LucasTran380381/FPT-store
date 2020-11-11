@@ -31,6 +31,13 @@ namespace FPT_store.Pages.Orders
 
         public void OnGetSearch(string id)
         {
+            if (string.IsNullOrEmpty(id))
+            {
+                Console.Out.WriteLine("true");
+                return;
+            }
+
+            Console.Out.WriteLine($"{id}");
             var email = User.FindFirstValue(ClaimTypes.Email);
             var role = User.FindFirstValue(ClaimTypes.Role);
 
