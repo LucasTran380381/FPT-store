@@ -2,10 +2,39 @@
 <html lang="en">
 <head>
     <title>@ViewData["Title"]</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="~/css/site.css"/>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
+<<<<<<< HEAD
+    @*<header>
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
+                <div class="container">
+                    <a class="navbar-brand" asp-area="" asp-page="/Admin/Index">FPT Store</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link text-light" asp-page="/Admin/Index">Home</a>
+                                <a class="nav-link text-light" asp-page="/Products/Add">Add Product</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>*@
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+        <h5 class="my-0 mr-md-auto font-weight-normal p-md-2 mx-md-5"><a class="navbar-brand" asp-area="" asp-page="/Admin/Index">FPT Store</a></h5>
+        <nav class="my-2 my-md-0 mr-md-3">
+            <a class="p-2 text-dark" asp-page="/Admin/Index">Home</a>
+            <a class="p-2 text-dark" asp-page="/Products/Add">Add Product</a>
+        </nav>
+        <a class="btn btn-outline-primary" asp-page="/Account/Logout">Logout</a>
+    </div>
+=======
 <header>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
         <div class="container">
@@ -36,18 +65,25 @@
         @RenderBody()
     </main>
 </div>
+>>>>>>> master
 
-<footer class="border-top footer text-muted">
     <div class="container">
-        &copy; 2020 - FPT_store - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
     </div>
-</footer>
 
-<script src="~/lib/jquery/dist/jquery.min.js"></script>
-<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="~/js/site.js" asp-append-version="true"></script>
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2020 - FPT Store - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
 
-@await RenderSectionAsync("Scripts", false)
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", false)
 
 </body>
 </html>

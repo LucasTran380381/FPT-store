@@ -1,6 +1,6 @@
 @page
 @model FPT_store.Pages.Admin.Index
-<a asp-page="/Products/Add">Add Product</a>
+@*<a asp-page="/Products/Add">Add Product</a>*@
 @if (Model.Products.Count != 0)
 {
     var number = 0;
@@ -28,7 +28,7 @@
                 <td>@product.Brand.Name</td>
                 <td>@product.Category.Name</td>
                 <td>@product.Status.Name</td>
-                <td><a asp-page="/products/delete" asp-route-id="@product.Id">Delete</a>|<a asp-page="/products/edit" asp-route-id="@product.Id">Edit</a></td>
+                <td><a asp-page="/products/delete" asp-route-id="@product.Id">Delete</a> | <a asp-page="/products/edit" asp-route-id="@product.Id">Edit</a></td>
             </tr>
         }
         </tbody>
