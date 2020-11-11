@@ -18,14 +18,15 @@
         <div class="col-lg-3">
             <form>
                 <h2>Search Product</h2>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" asp-for="SearchName">
 
                 <div class="dropdown-divider"></div>
 
                 <div class="list-group">
-                    <a href="#" class="list-group-item">Category 1</a>
-                    <a href="#" class="list-group-item">Category 2</a>
-                    <a href="#" class="list-group-item">Category 3</a>
+                    @foreach (var category in Model.Categories)
+                    {
+                        <a class="list-group-item" asp-page-handler="FilterProduct" asp-route-Data="@category.Name" asp-route-Type="0">@category.Name</a>
+                    }
                 </div>
 
                 <div class="dropdown-divider"></div>
@@ -33,7 +34,7 @@
                 <div class="list-group">
                     @foreach (var brand in Model.Brands)
                     {
-                        <a class="list-group-item" asp-page-handler="FilterProduct" asp-route-Brand="@brand.Name">@brand.Name</a>
+                        <a class="list-group-item" asp-page-handler="FilterProduct" asp-route-Data="@brand.Name" asp-route-Type="1">@brand.Name</a>
                     }
                 </div>
 
@@ -80,19 +81,34 @@
                 @foreach (var product in Model.Products)
                 {
                     <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100">
-                            <img class="card-img-top" src="@product.Image" alt="">
+                        <form method="post">
+                            <div class="card h-100">
+                                <img class="card-img-top" src="@product.Image" alt="">
 
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a asp-page="Products/Index" asp-route-id="@product.Id">@product.Name</a>
-                                </h4>
-                                <h5>@product.Price</h5>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a asp-page="Products/Index" asp-route-id="@product.Id">@product.Name</a>
+                                    </h4>
+                                    <h5>@product.Price</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <small>Category: @product.Category.Name</small>
+                                </div>
+                                <input type="hidden" asp-for="AddedProduct.Id" value="@product.Id"/>
+                                <input type="hidden" asp-for="AddedProduct.Image" value="@product.Image"/>
+                                <input type="hidden" asp-for="AddedProduct.Name" value="@product.Name"/>
+                                <input type="hidden" asp-for="AddedProduct.Price" value="@product.Price"/>
+                                <input type="hidden" asp-for="AddedProduct.Quantity" value="@product.Quantity"/>
+                                <input type="hidden" asp-for="AddedProduct.Status" value="@product.Status"/>
+                                <input type="hidden" asp-for="AddedProduct.Brand" value="@product.Brand"/>
+                                <input type="hidden" asp-for="AddedProduct.Category" value="@product.Category"/>
+                                <input type="hidden" asp-for="AddedProduct.Description" value="@product.Description"/>
+
+                                <div class="d-flex justify-content-center">
+                                    <input class="btn btn-primary btn-sm" type="submit" value="Add to cart">
+                                </div>
                             </div>
-                            <div class="card-footer">
-                                <small>Category: @product.Category.Name</small>
-                            </div>
-                        </div>
+                        </form>
                     </div>
                 }
 

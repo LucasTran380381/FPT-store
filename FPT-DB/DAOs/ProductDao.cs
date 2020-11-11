@@ -57,8 +57,15 @@ namespace FptDB.DAOs
 
             using (var connection = DbUtil.GetConn())
             {
-                using (var command = new SqlCommand())
+                using (var command = new SqlCommand("GetProductsByCategory", connection))
                 {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@CategoryName", cateName);
+                    connection.Open();
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read()) products.Add(initProduct(reader));
+                    }
                 }
             }
 
@@ -221,6 +228,27 @@ namespace FptDB.DAOs
             var result = connection.Execute(sql, param) > 0;
 
             return result;
+        }
+
+        public List<ProductDto> GetProductsByName(string productName)
+        {
+            var products = new List<ProductDto>();
+
+            using (var connection = DbUtil.GetConn())
+            {
+                using (var command = new SqlCommand("GetProductByName", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@Name", productName);
+                    connection.Open();
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read()) products.Add(initProduct(reader));
+                    }
+                }
+            }
+
+            return products;
         }
     }
 }
