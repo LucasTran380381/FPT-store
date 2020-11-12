@@ -25,3 +25,12 @@ D:\Code\PRN292-Code\PRN292-SE1406-WebBanDienThoai\FPT-store\FPT-DB\obj\Debug\net
 D:\Code\PRN292-Code\PRN292-SE1406-WebBanDienThoai\FPT-store\FPT-DB\obj\Debug\netcoreapp3.1\FPT-DB.csproj.CoreCompileInputs.cache
 D:\Code\PRN292-Code\PRN292-SE1406-WebBanDienThoai\FPT-store\FPT-DB\obj\Debug\netcoreapp3.1\FPT-DB.dll
 D:\Code\PRN292-Code\PRN292-SE1406-WebBanDienThoai\FPT-store\FPT-DB\obj\Debug\netcoreapp3.1\FPT-DB.pdb
+D:\Code\PRN292-Code\PRN292-SE1406-WebBanDienThoai\FPT-DB\bin\Debug\netcoreapp3.1\FPT-DB.deps.json
+D:\Code\PRN292-Code\PRN292-SE1406-WebBanDienThoai\FPT-DB\bin\Debug\netcoreapp3.1\FPT-DB.dll
+D:\Code\PRN292-Code\PRN292-SE1406-WebBanDienThoai\FPT-DB\bin\Debug\netcoreapp3.1\FPT-DB.pdb
+D:\Code\PRN292-Code\PRN292-SE1406-WebBanDienThoai\FPT-DB\obj\Debug\netcoreapp3.1\FPT-DB.csprojAssemblyReference.cache
+D:\Code\PRN292-Code\PRN292-SE1406-WebBanDienThoai\FPT-DB\obj\Debug\netcoreapp3.1\FPT-DB.AssemblyInfoInputs.cache
+D:\Code\PRN292-Code\PRN292-SE1406-WebBanDienThoai\FPT-DB\obj\Debug\netcoreapp3.1\FPT-DB.AssemblyInfo.cs
+D:\Code\PRN292-Code\PRN292-SE1406-WebBanDienThoai\FPT-DB\obj\Debug\netcoreapp3.1\FPT-DB.csproj.CoreCompileInputs.cache
+D:\Code\PRN292-Code\PRN292-SE1406-WebBanDienThoai\FPT-DB\obj\Debug\netcoreapp3.1\FPT-DB.dll
+D:\Code\PRN292-Code\PRN292-SE1406-WebBanDienThoai\FPT-DB\obj\Debug\netcoreapp3.1\FPT-DB.pdb
