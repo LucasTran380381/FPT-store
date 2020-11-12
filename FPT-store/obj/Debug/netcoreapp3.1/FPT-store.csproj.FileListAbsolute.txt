@@ -213,3 +213,5 @@ D:\FPT\CN5\PRN292\FPT-store\FPT-store\obj\Debug\netcoreapp3.1\FPT-store.csproj.C
 D:\FPT\CN5\PRN292\FPT-store\FPT-store\obj\Debug\netcoreapp3.1\staticwebassets\FPT-store.StaticWebAssets.Manifest.cache
 D:\FPT\CN5\PRN292\FPT-store\FPT-store\obj\Debug\netcoreapp3.1\staticwebassets\FPT-store.StaticWebAssets.xml
 D:\FPT\CN5\PRN292\FPT-store\FPT-store\obj\Debug\netcoreapp3.1\FPT-store.genruntimeconfig.cache
+D:\FPT\CN5\PRN292\FPT-store\FPT-store\obj\Debug\netcoreapp3.1\Razor\Pages\Account\AccessDenied.cshtml.g.cs
+D:\FPT\CN5\PRN292\FPT-store\FPT-store\obj\Debug\netcoreapp3.1\Razor\Pages\Orders\Cart.cshtml.g.cs

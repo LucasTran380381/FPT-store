@@ -97,7 +97,7 @@
     <div class="form-group">
         <label class="col-md-4 control-label" for="product_description">Product Description</label>
         <div class="col-md-4">
-            <textarea class="form-control" id="product_description" asp-for="AddAndEditProductModel.Description"></textarea>
+            <textarea class="form-control" id="product_description" asp-for="AddAndEditProductModel.Description" required></textarea>
             <span asp-validation-for="AddAndEditProductModel.Description"></span>
         </div>
     </div>

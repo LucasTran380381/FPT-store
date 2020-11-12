@@ -106,12 +106,6 @@ namespace FPT_store.Pages
 
             HttpContext.Session.SetString("cart", cartString);
 
-            foreach (var item in Cart.GetItems())
-            {
-                Console.WriteLine("name: " + item.Value.Name);
-                Console.WriteLine("quantity: " + item.Value.Quantity);
-            }
-            
             return RedirectToPage("./Index");
         }
     }

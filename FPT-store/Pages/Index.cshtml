@@ -103,10 +103,13 @@
                                 <input type="hidden" asp-for="AddedProduct.Brand" value="@product.Brand"/>
                                 <input type="hidden" asp-for="AddedProduct.Category" value="@product.Category"/>
                                 <input type="hidden" asp-for="AddedProduct.Description" value="@product.Description"/>
-
-                                <div class="d-flex justify-content-center">
-                                    <input class="btn btn-primary btn-sm" type="submit" value="Add to cart">
-                                </div>
+                                
+                                @if (User.IsInRole("customer") || User.IsInRole("employee"))
+                                {
+                                    <div class="d-flex justify-content-center">
+                                        <input class="btn btn-primary btn-sm" type="submit" value="Add to cart">
+                                    </div>
+                                }
                             </div>
                         </form>
                     </div>

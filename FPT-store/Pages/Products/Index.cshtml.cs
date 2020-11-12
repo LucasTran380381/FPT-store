@@ -22,7 +22,7 @@ namespace FPT_store.Pages.Products
         {
             try
             {
-                _productDao.Get(id);
+                Product = _productDao.Get(id);
             }
             catch (Exception e)
             {

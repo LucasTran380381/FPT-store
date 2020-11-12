@@ -1,5 +1,9 @@
 @page
 @model FPT_store.Pages.Admin.Index
+@{
+    ViewData["Title"] = "Product Management";
+    Layout = "Shared/_Layout";
+}
 <a asp-page="/Products/Add">Add Product</a>
 @if (Model.Products.Count != 0)
 {
