@@ -63,6 +63,40 @@ from orders where fk_accounts=@Email order by date desc";
             }
 
             return list;
+          }
+          
+        public bool AddOrder(OrderDto dto)
+        {
+            using (var connection = DbUtil.GetConn())
+            {
+                var sql = "insert orders (total, date, fk_accounts, fk_status) values (@Total, @Date, @Email, @StatusId)";
+                var param = new
+                {
+                    dto.Total, dto.Date, dto.Email, dto.StatusId
+                };
+                bool result = connection.Execute(sql, param) > 0;
+                return result;
+            }
+        }
+
+        public string GetOrderId(OrderDto dto)
+        {
+            using (var connection = DbUtil.GetConn())
+            {
+                var sql = @"select id Id
+                from orders
+                where date = @Date
+                and fk_status = 1
+                and fk_accounts = @Account";
+
+                var param = new
+                {
+                    Date = dto.Date,
+                    Account = dto.Email
+                };
+                string id = connection.QuerySingleOrDefault<string>(sql, param);
+                return id;
+            }
         }
     }
 }

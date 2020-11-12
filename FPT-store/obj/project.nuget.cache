@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "ssSa2rXGnzdFvBBZGNBWm2dibzy+Ot6RSyULaKuHzpDuF+RhOiLfweFZgKxghnOAxN7199xcSkGr4y+oR3jy/A==",
   "success": true,
   "projectFilePath": "/Users/macpro/Documents/PRN292/project/FPT-store/FPT-store/FPT-store.csproj",
+=======
+  "dgSpecHash": "Uv6xJJ//0kb9wp4Staw9aijCV5uLfKPEkthseanczEOerC13lehCrM8AAVjT/gg7lu2PmIH8j8Z8/RGfw2KAqQ==",
+  "success": true,
+  "projectFilePath": "D:\\Code\\Temp\\PRN-Test\\FPT-store\\FPT-store\\FPT-store.csproj",
+>>>>>>> master
   "expectedPackageFiles": [
     "/Users/macpro/.nuget/packages/dapper/2.0.35/dapper.2.0.35.nupkg.sha512",
     "/Users/macpro/.nuget/packages/microsoft.data.sqlclient/2.1.0-preview2.20297.7/microsoft.data.sqlclient.2.1.0-preview2.20297.7.nupkg.sha512",

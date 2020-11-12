@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "/Users/macpro/Documents/PRN292/project/FPT-store/FPT-store/FPT-store.csproj": {}
   },
   "projects": {
@@ -12,6 +13,19 @@
         "projectPath": "/Users/macpro/Documents/PRN292/project/FPT-store/FPT-DB/FPT-DB.csproj",
         "packagesPath": "/Users/macpro/.nuget/packages/",
         "outputPath": "/Users/macpro/Documents/PRN292/project/FPT-store/FPT-DB/obj/",
+=======
+    "D:\\Code\\Temp\\PRN-Test\\FPT-store\\FPT-store\\FPT-store.csproj": {}
+  },
+  "projects": {
+    "D:\\Code\\Temp\\PRN-Test\\FPT-store\\FPT-DB\\FPT-DB.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Code\\Temp\\PRN-Test\\FPT-store\\FPT-DB\\FPT-DB.csproj",
+        "projectName": "FPT-DB",
+        "projectPath": "D:\\Code\\Temp\\PRN-Test\\FPT-store\\FPT-DB\\FPT-DB.csproj",
+        "packagesPath": "C:\\Users\\jiahn\\.nuget\\packages\\",
+        "outputPath": "D:\\Code\\Temp\\PRN-Test\\FPT-store\\FPT-DB\\obj\\",
+>>>>>>> master
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/macpro/.nuget/NuGet/NuGet.Config"
@@ -64,6 +78,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "/Users/macpro/Documents/PRN292/project/FPT-store/FPT-store/FPT-store.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -72,6 +87,16 @@
         "projectPath": "/Users/macpro/Documents/PRN292/project/FPT-store/FPT-store/FPT-store.csproj",
         "packagesPath": "/Users/macpro/.nuget/packages/",
         "outputPath": "/Users/macpro/Documents/PRN292/project/FPT-store/FPT-store/obj/",
+=======
+    "D:\\Code\\Temp\\PRN-Test\\FPT-store\\FPT-store\\FPT-store.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Code\\Temp\\PRN-Test\\FPT-store\\FPT-store\\FPT-store.csproj",
+        "projectName": "FPT-store",
+        "projectPath": "D:\\Code\\Temp\\PRN-Test\\FPT-store\\FPT-store\\FPT-store.csproj",
+        "packagesPath": "C:\\Users\\jiahn\\.nuget\\packages\\",
+        "outputPath": "D:\\Code\\Temp\\PRN-Test\\FPT-store\\FPT-store\\obj\\",
+>>>>>>> master
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/macpro/.nuget/NuGet/NuGet.Config"
@@ -85,8 +110,13 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
+<<<<<<< HEAD
               "/Users/macpro/Documents/PRN292/project/FPT-store/FPT-DB/FPT-DB.csproj": {
                 "projectPath": "/Users/macpro/Documents/PRN292/project/FPT-store/FPT-DB/FPT-DB.csproj"
+=======
+              "D:\\Code\\Temp\\PRN-Test\\FPT-store\\FPT-DB\\FPT-DB.csproj": {
+                "projectPath": "D:\\Code\\Temp\\PRN-Test\\FPT-store\\FPT-DB\\FPT-DB.csproj"
+>>>>>>> master
               }
             }
           }

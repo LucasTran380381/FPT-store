@@ -28,10 +28,10 @@ namespace FPT_store.Pages.Orders
 
         public string Message { get; set; }
 
-       
+
 
         public OrderSearchModel Model { get; set; }
-        
+
         public void OnGet()
         {
             var email = User.FindFirstValue(ClaimTypes.Email);

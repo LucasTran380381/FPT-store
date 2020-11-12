@@ -57,8 +57,15 @@ namespace FptDB.DAOs
 
             using (var connection = DbUtil.GetConn())
             {
-                using (var command = new SqlCommand())
+                using (var command = new SqlCommand("GetProductsByCategory", connection))
                 {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@CategoryName", cateName);
+                    connection.Open();
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read()) products.Add(initProduct(reader));
+                    }
                 }
             }
 
@@ -221,6 +228,80 @@ namespace FptDB.DAOs
             var result = connection.Execute(sql, param) > 0;
 
             return result;
+        }
+
+        public List<ProductDto> GetProductsByName(string productName)
+        {
+            var products = new List<ProductDto>();
+
+            using (var connection = DbUtil.GetConn())
+            {
+                using (var command = new SqlCommand("GetProductByName", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@Name", productName);
+                    connection.Open();
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read()) products.Add(initProduct(reader));
+                    }
+                }
+            }
+
+            return products;
+        }
+
+        public bool UpdateQuantity(Dictionary<string, ProductDto> list)
+        {
+            bool result = false;
+            using (SqlConnection connection = DbUtil.GetConn())
+            {
+                connection.Open();
+
+                // Start a local transaction.
+                SqlTransaction sqlTran = connection.BeginTransaction();
+
+                // Enlist a command in the current transaction.
+                SqlCommand cmd = connection.CreateCommand();
+                cmd.Transaction = sqlTran;
+                cmd.Connection = connection;
+                try
+                {
+                    cmd.Parameters.Add("@Quantity", SqlDbType.Int);
+                    cmd.Parameters.Add("@Id", SqlDbType.NVarChar);
+                    // Execute two separate commands.
+                    foreach (var key in list.Keys)
+                    {
+                        cmd.CommandText = "update products set quantity = (quantity - @Quantity) where id = @Id";
+                        cmd.Parameters["@Quantity"].Value = list[key].Quantity;
+                        cmd.Parameters["@Id"].Value = key;
+
+                        cmd.ExecuteNonQuery();
+                    }
+                    // Commit the transaction.
+                    sqlTran.Commit();
+                    result = true;
+                }
+                catch (Exception ex)
+                {
+                    // Handle the exception if the transaction fails to commit.
+                    result = false;
+                    try
+                    {
+                        // Attempt to roll back the transaction.
+                        sqlTran.Rollback();
+                    }
+                    catch (Exception exRollback)
+                    {
+                        // Throws an InvalidOperationException if the connection
+                        // is closed or the transaction has already been rolled
+                        // back on the server.
+                        result = false;
+                    }
+                }
+
+                return result;
+            }    
         }
     }
 }

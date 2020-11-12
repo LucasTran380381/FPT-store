@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "mWJH4tfTPaEb+SwtHZzvjDECCzIHFUOMwVucuOp1iX4ciL8NPz/5gvnUXHxewaeAlIJiq5qdSkHK6HNdQvgiEA==",
   "success": true,
   "projectFilePath": "/Users/macpro/Documents/PRN292/project/FPT-store/FPT-DB/FPT-DB.csproj",
+=======
+  "dgSpecHash": "fuD/dSHzXjVemAC3z3QHl9LwOQVO7lcwchubIPXXwzUYl7SA4SOE7ERG5UfVuUuGCScGdYaE9FX/Wvi0WghAaA==",
+  "success": true,
+  "projectFilePath": "D:\\Code\\Temp\\PRN-Test\\FPT-store\\FPT-DB\\FPT-DB.csproj",
+>>>>>>> master
   "expectedPackageFiles": [
     "/Users/macpro/.nuget/packages/dapper/2.0.35/dapper.2.0.35.nupkg.sha512",
     "/Users/macpro/.nuget/packages/microsoft.csharp/4.3.0/microsoft.csharp.4.3.0.nupkg.sha512",
