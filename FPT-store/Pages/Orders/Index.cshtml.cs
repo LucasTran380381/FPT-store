@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FPT_store.Pages.Orders
 {
-    [Authorize(Roles = "customer, employee")]    
+    [Authorize(Roles = "customer")]
     public class Index : PageModel
     {
         private readonly OrderDao _orderDao;
@@ -25,9 +25,17 @@ namespace FPT_store.Pages.Orders
             _orderDetailDao = orderDetailDao;
         }
 
+        public List<OrderDto> Orders { get; set; }
+
         public string Message { get; set; }
 
-        public OrderSearchModel Model { get; set; }
+        public OrderModel Model { get; set; }
+
+        public void OnGet()
+        {
+            var email = User.FindFirstValue(ClaimTypes.Email);
+            Orders = _orderDao.GetByEmail(email);
+        }
 
         public void OnGetSearch(string id)
         {
@@ -54,9 +62,9 @@ namespace FPT_store.Pages.Orders
             }
         }
 
-        private OrderSearchModel InitModel(OrderDto dto, List<OrderDetailDto> orderDetails)
+        private OrderModel InitModel(OrderDto dto, List<OrderDetailDto> orderDetails)
         {
-            var model = new OrderSearchModel
+            var model = new OrderModel
             {
                 Id = dto.Id,
                 Email = dto.Email,

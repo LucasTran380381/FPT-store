@@ -12,6 +12,36 @@
     <button class="btn btn-primary" asp-page-handler="search">Search</button>
 </form>
 
+@if (Model.Orders != null)
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Date</th>
+            <th scope="col">Total</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var order in Model.Orders)
+        {
+            <tr>
+                <td>
+                    <a asp-route-id="@order.Id" asp-page="/orders/detail">
+                        @order.Id
+                    </a>
+                </td>
+                <td>@order.Date</td>
+                <td>@order.Total</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+else
+{
+    <h3 class="text-danger">Not Have Order</h3>
+}
 @if (Model.Model != null)
 {
     <div class="row">
@@ -54,10 +84,6 @@
         }
 
     </div>
-}
-else
-{
-    <h3 class="text-danger">Not Found Order</h3>
 }
 
 @section Scripts
