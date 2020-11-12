@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bVBfb8XOQJhTJwB1fkAoj8sC4ugBTA2BrYvOr9BY7IqI0CeuoJuDdgsRUujy4FDkHM69tPYM2jo823tLanWMIA==",
+  "dgSpecHash": "fuD/dSHzXjVemAC3z3QHl9LwOQVO7lcwchubIPXXwzUYl7SA4SOE7ERG5UfVuUuGCScGdYaE9FX/Wvi0WghAaA==",
   "success": true,
-  "projectFilePath": "D:\\Code\\PRN292-Code\\PRN292-SE1406-WebBanDienThoai\\FPT-DB\\FPT-DB.csproj",
+  "projectFilePath": "D:\\Code\\Temp\\PRN-Test\\FPT-store\\FPT-DB\\FPT-DB.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jiahn\\.nuget\\packages\\dapper\\2.0.35\\dapper.2.0.35.nupkg.sha512",
     "C:\\Users\\jiahn\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",

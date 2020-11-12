@@ -1,3 +1,4 @@
+using System;
 using FptDB.DAOs;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
@@ -32,6 +33,9 @@ namespace FPT_store
             services.AddTransient<StatusDao, StatusDao>();
             services.AddTransient<OrderDetailDao, OrderDetailDao>();
             services.AddRazorPages();
+            services.AddSession(options => {
+                options.IdleTimeout = TimeSpan.FromMinutes(30);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,6 +60,7 @@ namespace FPT_store
             app.UseAuthentication();
             app.UseAuthorization();
             app.UseCookiePolicy();
+            app.UseSession();
 
             app.UseEndpoints(endpoints => { endpoints.MapRazorPages(); });
         }

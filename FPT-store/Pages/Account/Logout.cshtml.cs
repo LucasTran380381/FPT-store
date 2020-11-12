@@ -10,6 +10,7 @@ namespace FPT_store.Pages.Account
     {
         public async Task<IActionResult> OnGet()
         {
+            HttpContext.Session.Remove("cart");
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToPage("../Index");
         }

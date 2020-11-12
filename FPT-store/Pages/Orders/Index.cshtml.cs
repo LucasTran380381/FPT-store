@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FPT_store.Pages.Orders
 {
-    [Authorize(Roles = "customer, employee")]
+    [Authorize(Roles = "customer, employee")]    
     public class Index : PageModel
     {
         private readonly OrderDao _orderDao;

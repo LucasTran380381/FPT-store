@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Code\\PRN292-Code\\PRN292-SE1406-WebBanDienThoai\\FPT-store\\FPT-store.csproj": {}
+    "D:\\Code\\Temp\\PRN-Test\\FPT-store\\FPT-store\\FPT-store.csproj": {}
   },
   "projects": {
-    "D:\\Code\\PRN292-Code\\PRN292-SE1406-WebBanDienThoai\\FPT-DB\\FPT-DB.csproj": {
+    "D:\\Code\\Temp\\PRN-Test\\FPT-store\\FPT-DB\\FPT-DB.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Code\\PRN292-Code\\PRN292-SE1406-WebBanDienThoai\\FPT-DB\\FPT-DB.csproj",
+        "projectUniqueName": "D:\\Code\\Temp\\PRN-Test\\FPT-store\\FPT-DB\\FPT-DB.csproj",
         "projectName": "FPT-DB",
-        "projectPath": "D:\\Code\\PRN292-Code\\PRN292-SE1406-WebBanDienThoai\\FPT-DB\\FPT-DB.csproj",
+        "projectPath": "D:\\Code\\Temp\\PRN-Test\\FPT-store\\FPT-DB\\FPT-DB.csproj",
         "packagesPath": "C:\\Users\\jiahn\\.nuget\\packages\\",
-        "outputPath": "D:\\Code\\PRN292-Code\\PRN292-SE1406-WebBanDienThoai\\FPT-DB\\obj\\",
+        "outputPath": "D:\\Code\\Temp\\PRN-Test\\FPT-store\\FPT-DB\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jiahn\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -66,14 +66,14 @@
         }
       }
     },
-    "D:\\Code\\PRN292-Code\\PRN292-SE1406-WebBanDienThoai\\FPT-store\\FPT-store.csproj": {
+    "D:\\Code\\Temp\\PRN-Test\\FPT-store\\FPT-store\\FPT-store.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Code\\PRN292-Code\\PRN292-SE1406-WebBanDienThoai\\FPT-store\\FPT-store.csproj",
+        "projectUniqueName": "D:\\Code\\Temp\\PRN-Test\\FPT-store\\FPT-store\\FPT-store.csproj",
         "projectName": "FPT-store",
-        "projectPath": "D:\\Code\\PRN292-Code\\PRN292-SE1406-WebBanDienThoai\\FPT-store\\FPT-store.csproj",
+        "projectPath": "D:\\Code\\Temp\\PRN-Test\\FPT-store\\FPT-store\\FPT-store.csproj",
         "packagesPath": "C:\\Users\\jiahn\\.nuget\\packages\\",
-        "outputPath": "D:\\Code\\PRN292-Code\\PRN292-SE1406-WebBanDienThoai\\FPT-store\\obj\\",
+        "outputPath": "D:\\Code\\Temp\\PRN-Test\\FPT-store\\FPT-store\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jiahn\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -89,8 +89,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\Code\\PRN292-Code\\PRN292-SE1406-WebBanDienThoai\\FPT-DB\\FPT-DB.csproj": {
-                "projectPath": "D:\\Code\\PRN292-Code\\PRN292-SE1406-WebBanDienThoai\\FPT-DB\\FPT-DB.csproj"
+              "D:\\Code\\Temp\\PRN-Test\\FPT-store\\FPT-DB\\FPT-DB.csproj": {
+                "projectPath": "D:\\Code\\Temp\\PRN-Test\\FPT-store\\FPT-DB\\FPT-DB.csproj"
               }
             }
           }

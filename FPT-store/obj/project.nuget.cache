@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OylnnSfWGPGgagL2LDNSiSHmysyAP3B39EFSDZMjyyyu5xjjrfLxB8BfhUhl8j8QQ/CS2YFnapici09wROZHaQ==",
+  "dgSpecHash": "Uv6xJJ//0kb9wp4Staw9aijCV5uLfKPEkthseanczEOerC13lehCrM8AAVjT/gg7lu2PmIH8j8Z8/RGfw2KAqQ==",
   "success": true,
-  "projectFilePath": "D:\\Code\\PRN292-Code\\PRN292-SE1406-WebBanDienThoai\\FPT-store\\FPT-store.csproj",
+  "projectFilePath": "D:\\Code\\Temp\\PRN-Test\\FPT-store\\FPT-store\\FPT-store.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jiahn\\.nuget\\packages\\dapper\\2.0.35\\dapper.2.0.35.nupkg.sha512",
     "C:\\Users\\jiahn\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.0-preview2.20297.7\\microsoft.data.sqlclient.2.1.0-preview2.20297.7.nupkg.sha512",
