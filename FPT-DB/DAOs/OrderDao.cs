@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using Dapper;
 using FptDB.DTOs;
 
@@ -47,6 +49,20 @@ namespace FptDB.DAOs
             }
 
             return dto;
+        }
+
+        public List<OrderDto> GetByEmail(string email)
+        {
+            List<OrderDto> list;
+            using (var connection = DbUtil.GetConn())
+            {
+                string sql = @"select *
+from orders where fk_accounts=@Email order by date desc";
+
+                list = connection.Query<OrderDto>(sql, new {email}).ToList();
+            }
+
+            return list;
         }
     }
 }

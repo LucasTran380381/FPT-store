@@ -9,13 +9,14 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FPT_store.Pages.Orders
 {
-    [Authorize(Roles = "customer, employee")]
+    [Authorize(Roles = "customer")]
     public class Index : PageModel
     {
         private readonly OrderDao _orderDao;
         private readonly OrderDetailDao _orderDetailDao;
         private readonly ProductDao _productDao;
         private readonly StatusDao _statusDao;
+        public List<OrderDto> Orders { get; set; }
 
         public Index(OrderDao orderDao, StatusDao statusDao, ProductDao productDao, OrderDetailDao orderDetailDao)
         {
@@ -27,7 +28,15 @@ namespace FPT_store.Pages.Orders
 
         public string Message { get; set; }
 
+       
+
         public OrderSearchModel Model { get; set; }
+        
+        public void OnGet()
+        {
+            var email = User.FindFirstValue(ClaimTypes.Email);
+            Orders = _orderDao.GetByEmail(email);
+        }
 
         public void OnGetSearch(string id)
         {

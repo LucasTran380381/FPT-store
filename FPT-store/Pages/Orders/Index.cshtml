@@ -1,4 +1,5 @@
 @page
+@using System.Security.Cryptography
 @model FPT_store.Pages.Orders.Index
 
 @{
@@ -11,6 +12,35 @@
     <input type="hidden" name="handler" value="Search">
 
 </form>
+
+@if (Model.Orders != null)
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Email</th>
+            <th scope="col">Data</th>
+            <th scope="col">Total</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var order in Model.Orders)
+        {
+            <tr>
+                <td>@order.Id</td>
+                <td>@order.Email</td>
+                <td>@order.Date</td>
+                <td>@order.Total &#8363;</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+else
+{
+    <h3 class="text-danger">Account not have order</h3>
+}
 
 @if (Model.Model != null)
 {
