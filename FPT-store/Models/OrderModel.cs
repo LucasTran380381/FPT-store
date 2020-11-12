@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace FPT_store.Models
 {
-    public class OrderSearchModel
+    public class OrderModel
     {
         public string Id { get; set; }
         public double Total { get; set; }

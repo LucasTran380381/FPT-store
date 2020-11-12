@@ -253,16 +253,16 @@ namespace FptDB.DAOs
 
         public bool UpdateQuantity(Dictionary<string, ProductDto> list)
         {
-            bool result = false;
-            using (SqlConnection connection = DbUtil.GetConn())
+            var result = false;
+            using (var connection = DbUtil.GetConn())
             {
                 connection.Open();
 
                 // Start a local transaction.
-                SqlTransaction sqlTran = connection.BeginTransaction();
+                var sqlTran = connection.BeginTransaction();
 
                 // Enlist a command in the current transaction.
-                SqlCommand cmd = connection.CreateCommand();
+                var cmd = connection.CreateCommand();
                 cmd.Transaction = sqlTran;
                 cmd.Connection = connection;
                 try
@@ -278,11 +278,12 @@ namespace FptDB.DAOs
 
                         cmd.ExecuteNonQuery();
                     }
+
                     // Commit the transaction.
                     sqlTran.Commit();
                     result = true;
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     // Handle the exception if the transaction fails to commit.
                     result = false;
@@ -291,7 +292,7 @@ namespace FptDB.DAOs
                         // Attempt to roll back the transaction.
                         sqlTran.Rollback();
                     }
-                    catch (Exception exRollback)
+                    catch (Exception)
                     {
                         // Throws an InvalidOperationException if the connection
                         // is closed or the transaction has already been rolled
@@ -301,7 +302,7 @@ namespace FptDB.DAOs
                 }
 
                 return result;
-            }    
+            }
         }
     }
 }

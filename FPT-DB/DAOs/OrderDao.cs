@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using Dapper;
 using FptDB.DTOs;
 
@@ -49,16 +51,30 @@ namespace FptDB.DAOs
             return dto;
         }
 
+        public List<OrderDto> GetByEmail(string email)
+        {
+            List<OrderDto> orders;
+            using (var connection = DbUtil.GetConn())
+            {
+                var sql = @"select *
+                from orders where fk_accounts = @Email order by date desc";
+                orders = connection.Query<OrderDto>(sql, new {email}).ToList();
+            }
+
+            return orders;
+        }
+
         public bool AddOrder(OrderDto dto)
         {
             using (var connection = DbUtil.GetConn())
             {
-                var sql = "insert orders (total, date, fk_accounts, fk_status) values (@Total, @Date, @Email, @StatusId)";
+                var sql =
+                    "insert orders (total, date, fk_accounts, fk_status) values (@Total, @Date, @Email, @StatusId)";
                 var param = new
                 {
                     dto.Total, dto.Date, dto.Email, dto.StatusId
                 };
-                bool result = connection.Execute(sql, param) > 0;
+                var result = connection.Execute(sql, param) > 0;
                 return result;
             }
         }
@@ -75,10 +91,10 @@ namespace FptDB.DAOs
 
                 var param = new
                 {
-                    Date = dto.Date,
+                    dto.Date,
                     Account = dto.Email
                 };
-                string id = connection.QuerySingleOrDefault<string>(sql, param);
+                var id = connection.QuerySingleOrDefault<string>(sql, param);
                 return id;
             }
         }

@@ -1,0 +1,57 @@
+@page "{id}"
+@model FPT_store.Pages.Orders.Detail
+
+@{
+    Layout = "Shared/_Layout";
+}
+
+
+@if (Model.OrderModel != null)
+{
+    <div class="row">
+        <h3 class="text-primary my-5">Order: </h3>
+
+        <div class="col-12">
+            <ul class="list-group">
+                <li class="list-group-item">Order Id: @Model.OrderModel.Id</li>
+                <li class="list-group-item">Customer Email: @Model.OrderModel.Email</li>
+                <li class="list-group-item">Create Date: @Model.OrderModel.Date</li>
+                <li class="list-group-item">Total: @Model.OrderModel.Total</li>
+            </ul>
+        </div>
+
+        @if (Model.OrderDetailModels != null)
+        {
+            <div class="row">
+                <h3 class="text-primary my-5">Order Detail: </h3>
+                <div class="col-12">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Prouduct name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Amount</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var orderDetail in Model.OrderDetailModels)
+                        {
+                            <tr>
+                                <td>@orderDetail.ProductName</td>
+                                <td>@orderDetail.Price</td>
+                                <td>@orderDetail.Quantity</td>
+                                <td>@orderDetail.Amount</td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <h3 class="text-danger">Not Found Order</h3>
+}
